@@ -5,7 +5,7 @@
 Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) — the principle that **constraint + mechanical metric + autonomous iteration = compounding gains**.
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue?logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Based on](https://img.shields.io/badge/Based_on-Karpathy's_Autoresearch-orange)](https://github.com/karpathy/autoresearch)
 
@@ -105,6 +105,105 @@ Claude will:
 5. Log every iteration in `autoresearch-results.tsv`
 6. Print a summary every 10 iterations
 7. **Never stop until you interrupt** (or until N iterations complete in bounded mode)
+
+---
+
+## Plan Your Run with `/autoresearch:plan` (v1.0.2)
+
+The hardest part of autoresearch isn't the loop — it's **defining Scope, Metric, and Verify** correctly. Get these wrong and the loop wastes iterations. Get them right and it's unstoppable.
+
+`/autoresearch:plan` is an interactive wizard that converts your plain-language goal into a validated, ready-to-execute configuration.
+
+### Usage
+
+```
+/autoresearch:plan
+Goal: Make the API respond faster
+```
+
+Or inline:
+
+```
+/autoresearch:plan Increase test coverage to 95%
+```
+
+### What It Does
+
+The wizard walks you through 5 questions (max) to nail down your configuration:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  Step 1: CAPTURE GOAL                                   │
+│  "What do you want to improve?"                         │
+│                                                         │
+│  Step 2: DEFINE SCOPE                                   │
+│  "Which files can autoresearch modify?"                 │
+│  → Scans codebase, suggests globs, validates matches    │
+│                                                         │
+│  Step 3: DEFINE METRIC                                  │
+│  "What number tells you if things got better?"          │
+│  → Suggests mechanical metrics based on your tooling    │
+│  → REJECTS subjective metrics ("looks better")          │
+│                                                         │
+│  Step 4: DEFINE DIRECTION                               │
+│  "Higher or lower is better?"                           │
+│                                                         │
+│  Step 5: DEFINE & VALIDATE VERIFY COMMAND               │
+│  → Constructs the shell command                         │
+│  → DRY-RUNS it on your codebase (mandatory)             │
+│  → Confirms it outputs a parseable number               │
+│  → Records baseline metric value                        │
+│                                                         │
+│  Step 6: CONFIRM & LAUNCH                               │
+│  → Shows complete config                                │
+│  → Option: launch now (unlimited or bounded) or copy    │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Critical Validation Gates
+
+The wizard **refuses to proceed** until:
+
+| Gate | Requirement |
+|------|-------------|
+| Scope | Glob resolves to ≥1 file |
+| Metric | Outputs a parseable number (not "PASS"/"FAIL"/subjective) |
+| Verify | Dry-run succeeds (exit code 0 + extractable metric) |
+
+This means when you launch, you **know** the loop will work. No wasted iterations debugging a broken verify command.
+
+### Example Session
+
+```
+> /autoresearch:plan Reduce bundle size
+
+[Scope]    Which files? → src/**/*.tsx, src/**/*.ts (127 files)
+[Metric]   Bundle size in KB (lower is better)
+[Verify]   npm run build 2>&1 | grep "First Load JS" | awk '{print $4}'
+[Dry run]  ✓ Exit 0 — Baseline: 287KB
+
+Ready-to-use:
+
+  /autoresearch
+  Goal: Reduce bundle size below 200KB
+  Scope: src/**/*.tsx, src/**/*.ts
+  Metric: bundle size in KB (lower is better)
+  Verify: npm run build 2>&1 | grep "First Load JS" | awk '{print $4}'
+
+Launch now? → [Unlimited] [Bounded] [Copy only]
+```
+
+### When to Use
+
+| Situation | Use |
+|-----------|-----|
+| First time using autoresearch | `/autoresearch:plan` — learn the format |
+| Unsure what metric to use | `/autoresearch:plan` — it suggests options |
+| Want to validate before a long run | `/autoresearch:plan` — dry-run confirms it works |
+| Know exactly what you want | `/autoresearch` directly — skip the wizard |
+| Running overnight | `/autoresearch:plan` then launch — confidence before sleep |
 
 ---
 
@@ -1002,6 +1101,7 @@ autoresearch/
         └── references/
             ├── autonomous-loop-protocol.md            ← Detailed 8-phase loop protocol
             ├── core-principles.md                     ← 7 universal principles
+            ├── plan-workflow.md                        ← /autoresearch:plan wizard protocol
             └── results-logging.md                     ← TSV tracking format + reporting
 ```
 
@@ -1031,6 +1131,9 @@ The meta-principle:
 ---
 
 ## FAQ
+
+**Q: I don't know what metric or verify command to use. How do I get started?**
+A: Run `/autoresearch:plan` — the planning wizard analyzes your codebase, suggests metrics based on your tooling, constructs a verify command, and dry-runs it before you launch. It's the easiest way to get started.
 
 **Q: Does this work with any Claude Code project?**
 A: Yes. Copy the skill to `.claude/skills/autoresearch/` in any project. It works with any language, framework, or domain.

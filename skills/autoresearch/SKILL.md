@@ -1,7 +1,7 @@
 ---
 name: autoresearch
 description: Autonomous Goal-directed Iteration. Apply Karpathy's autoresearch principles to ANY task. Loops autonomously — modify, verify, keep/discard, repeat. Supports optional loop count via Claude Code's /loop command.
-version: 1.0.1
+version: 1.0.2
 ---
 
 # Claude Autoresearch — Autonomous Goal-directed Iteration
@@ -10,11 +10,53 @@ Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
 
 **Core idea:** You are an autonomous agent. Modify → Verify → Keep/Discard → Repeat.
 
+## Subcommands
+
+| Subcommand | Purpose |
+|------------|---------|
+| `/autoresearch` | Run the autonomous loop (default) |
+| `/autoresearch:plan` | Interactive wizard to build Scope, Metric, Direction & Verify from a Goal |
+
+### /autoresearch:plan — Goal → Configuration Wizard
+
+Converts a plain-language goal into a validated, ready-to-execute autoresearch configuration.
+
+Load: `references/plan-workflow.md` for full protocol.
+
+**Quick summary:**
+
+1. **Capture Goal** — ask what the user wants to improve (or accept inline text)
+2. **Analyze Context** — scan codebase for tooling, test runners, build scripts
+3. **Define Scope** — suggest file globs, validate they resolve to real files
+4. **Define Metric** — suggest mechanical metrics, validate they output a number
+5. **Define Direction** — higher or lower is better
+6. **Define Verify** — construct the shell command, **dry-run it**, confirm it works
+7. **Confirm & Launch** — present the complete config, offer to launch immediately
+
+**Critical gates:**
+- Metric MUST be mechanical (outputs a parseable number, not subjective)
+- Verify command MUST pass a dry run on the current codebase before accepting
+- Scope MUST resolve to ≥1 file
+
+**Usage:**
+```
+/autoresearch:plan
+Goal: Make the API respond faster
+
+/autoresearch:plan Increase test coverage to 95%
+
+/autoresearch:plan Reduce bundle size below 200KB
+```
+
+After the wizard completes, the user gets a ready-to-paste `/autoresearch` invocation — or can launch it directly.
+
 ## When to Activate
 
-- User invokes `/autoresearch` or `/ug:autoresearch`
-- User says "work autonomously", "iterate until done", "keep improving", "run overnight"
-- Any task requiring repeated iteration cycles with measurable outcomes
+- User invokes `/autoresearch` or `/ug:autoresearch` → run the loop
+- User invokes `/autoresearch:plan` → run the planning wizard
+- User says "help me set up autoresearch", "plan an autoresearch run" → run the planning wizard
+- User says "work autonomously", "iterate until done", "keep improving", "run overnight" → run the loop
+- Any task requiring repeated iteration cycles with measurable outcomes → run the loop
 
 ## Optional: Controlled Loop Count
 
