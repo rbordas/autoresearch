@@ -5,7 +5,7 @@
 Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) — the principle that **constraint + mechanical metric + autonomous iteration = compounding gains**.
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue?logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
-[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
+[![Version](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Based on](https://img.shields.io/badge/Based_on-Karpathy's_Autoresearch-orange)](https://github.com/karpathy/autoresearch)
 
@@ -23,6 +23,7 @@ Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) —
 | `/autoresearch:security --fix` | Auto-fix confirmed Critical/High findings after audit | v1.0.3 |
 | `/autoresearch:security --fail-on critical` | Exit non-zero if severity threshold met (CI/CD gate) | v1.0.3 |
 | `/loop N /autoresearch:security` | Bounded security audit (N iterations) | v1.0.3 |
+| `Guard: <command>` | Optional safety net — must pass for changes to be kept (regression prevention) | v1.0.4 |
 
 **Security audit includes:** STRIDE threat model, OWASP Top 10 (70+ checks), 4 red-team adversarial personas (Security Adversary, Supply Chain Attacker, Insider Threat, Infrastructure Attacker), proof-of-concept validation, structured report folder, historical comparison.
 
@@ -53,6 +54,40 @@ Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) —
 | Audit only changed files (PR review) | `/autoresearch:security --diff` |
 | Auto-fix security issues | `/autoresearch:security --fix` |
 | Block CI pipeline on vulnerabilities | `/autoresearch:security --fail-on critical` |
+| Optimize without breaking existing tests | Add `Guard: npm test` to your config |
+
+### Guard — Prevent Regressions While Optimizing (v1.0.4)
+
+When optimizing a metric (e.g., benchmark time), the loop might break existing behavior. **Guard** is an optional safety net — a command that must ALWAYS pass for a change to be kept.
+
+```
+/autoresearch
+Goal: Reduce API response time to under 100ms
+Metric: p95 response time in ms (lower is better)
+Verify: npm run bench:api | grep "p95"
+Guard: npm test
+Scope: src/api/**/*.ts
+```
+
+**How it works:**
+- **Verify** = "Did the metric improve?" (the goal)
+- **Guard** = "Did anything else break?" (the safety net)
+
+If the metric improves but the guard fails, Claude **reworks the optimization** (up to 2 attempts) to find an approach that improves the metric WITHOUT breaking the guard. Guard/test files are never modified.
+
+**When to use Guard:**
+
+| Scenario | Verify | Guard |
+|----------|--------|-------|
+| Reduce bundle size | `npm run build \| grep size` | `npm test` |
+| Optimize Lighthouse | `npx lighthouse --output json` | `npm test` |
+| Reduce LOC (refactoring) | `wc -l src/**/*.ts` | `npm test && npm run typecheck` |
+| Improve benchmark time | `npm run bench` | `npm test` |
+| Increase coverage | `jest --coverage` | *(no guard needed — tests ARE the metric)* |
+
+Guard is **optional** — if not specified, the loop works exactly as before.
+
+> **Credit:** Guard was contributed by [@pronskiy](https://github.com/pronskiy) (JetBrains) in [PR #7](https://github.com/uditgoenka/autoresearch/pull/7).
 
 ---
 

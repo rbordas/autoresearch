@@ -91,6 +91,32 @@ AskUserQuestion:
 
 If metric fails validation, explain why and suggest alternatives. **Do not proceed until metric is mechanical.**
 
+### Phase 4.5: Define Guard (Optional)
+
+Ask if the user wants a guard command to prevent regressions:
+
+```
+AskUserQuestion:
+  question: "Do you want a guard command? This is a safety net that must ALWAYS pass — it prevents breaking existing behavior while optimizing."
+  header: "Guard"
+  options:
+    - label: "Yes — run tests as guard (Recommended)"
+      description: "{detected_test_command} must pass for every kept change"
+    - label: "Yes — custom guard"
+      description: "I'll provide my own guard command"
+    - label: "No guard needed"
+      description: "Skip — the metric is enough (e.g., test coverage where tests ARE the metric)"
+```
+
+**Guard suggestion rules:**
+- If metric is performance/benchmark/bundle size → suggest `{test_command}` as guard
+- If metric is Lighthouse/accessibility → suggest `{test_command}` as guard
+- If metric is refactoring (LOC reduction) → suggest `{test_command} && {typecheck_command}` as guard
+- If metric IS tests (coverage, pass count) → suggest "No guard needed" as default
+- If no test runner detected → suggest "No guard needed" with note
+
+**Guard validation:** If guard is set, run it once to confirm it passes on current codebase. If it fails, help user fix it before proceeding.
+
 ### Phase 5: Define Direction
 
 ```
@@ -156,6 +182,7 @@ Present the complete configuration:
 **Scope:** {glob pattern}
 **Metric:** {metric name} ({direction})
 **Verify:** `{command}`
+**Guard:** `{guard_command}` *(or "none")*
 **Baseline:** {value from dry run}
 
 ### Ready-to-use command:
@@ -165,7 +192,10 @@ Goal: {goal}
 Scope: {scope}
 Metric: {metric} ({direction})
 Verify: {verify_command}
+Guard: {guard_command}
 ```
+
+If no guard was set, omit the Guard line from the output.
 
 Then ask:
 
