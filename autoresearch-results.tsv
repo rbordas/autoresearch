@@ -1,0 +1,6 @@
+# metric_direction: higher_is_better
+iteration	commit	metric	delta	guard	status	description
+0	011f812	81	0.0	-	baseline	initial Harvard-style resume merging industry and academic CVs
+1	90002c0	93	+12.0	-	keep	add quantified achievements throughout (7 bullets with metrics)
+2	6251490	95	+2.0	-	keep	fix action verbs to past-tense Harvard style (45/46 bullets)
+3	2bbadad	100	+5.0	-	keep	fix last verb + boost quant (9 bullets) — 100/100
