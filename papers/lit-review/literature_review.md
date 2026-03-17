@@ -279,8 +279,8 @@ career-oriented and psychological mentoring (Wilbanks, 2013).
 
 There are over 50 definitions of mentoring that are dependent on the
 context (Crisp & Cruz, 2009; Iyamu & Isizah, 2021). Mentoring is a
-socially learning process rooted in social interaction between mentor
-and mentee (Crisp & Cruz, 2009). A mentor, often possessing specific
+social learning process rooted in social interaction between mentor
+and mentee (Bandura, 1977; Crisp & Cruz, 2009). A mentor, often possessing specific
 qualities or holding a position of authority, actively guides a younger,
 less experienced individual (the mentee or protégé). Through this
 relationship, the mentee gains valuable support, visibility, resources,
