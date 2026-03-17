@@ -10,7 +10,7 @@ Fort Lauderdale, FL · (954) 937-5670 · rene.bordas@gmail.com · linkedin.com/i
 - Managed P&L responsibilities across 2 business units for 10+ years within a major publicly traded corporation, consistently meeting or exceeding margin and renewal targets.
 - Led customer-facing technical teams of up to 40 employees globally, progressing from individual contributor to global director over a 25-year career.
 - Designed and delivered technical training programs with measurable milestones, combining lectures and hands-on activities for diverse audiences.
-- Pursuing a PhD in Business Administration with research expertise in statistical analysis, IoT systems, and data analytics.
+- Completed doctoral coursework for a PhD in Business Administration, building research expertise in statistical analysis, IoT systems, and data analytics.
 
 ---
 
@@ -25,7 +25,7 @@ _Director Operations, US, Oracle Hospitality – Cruise_ · October 2014 – Oct
 - Managed revenue and margin for 2 separate P&Ls (Consulting and Premier Support); met or exceeded margin goals every year since the Oracle acquisition in 2014.
 - Achieved 90%+ renewal rate for cruise customer support contracts in 2021 despite significant budget constraints caused by COVID-19.
 - Guided the acquired Fidelio Cruise team through Oracle America onboarding and integration, maintaining continuity of service across 3 regions during the transition.
-- Coached 6 global mid-level managers through the Oracle Leadership Development Program to develop an organization-wide delivery quality improvement initiative.
+- Coached 6 managers through the Oracle Leadership Development Program to develop an organization-wide delivery quality improvement initiative.
 - Prepared a global team of technical consultants to assist customers in transitioning from on-premise IT to cloud solutions.
 - Developed and implemented a scalable global organizational structure for Consulting, Premier Support, and Support Renewal Services.
 - Initiated and continue to facilitate a monthly virtual panel discussion for customers with Oracle product SMEs and technical leaders from cruise operator IT organizations.
@@ -36,7 +36,7 @@ _Director Operations, US, Oracle Hospitality – Cruise_ · October 2014 – Oct
 
 _Head of Fleet Management System Operation_ · July 2010 – October 2014
 
-- Directed a global team of engineers installing and configuring fleet management software at cruise ship operator headquarters, and supervised a 24/7 global support helpdesk with 15 engineers.
+- Directed a global team of 15 people installing and configuring fleet management software at cruise ship operator headquarters, and supervised a 24/7 global support helpdesk.
 - Led software installation projects for a shore-side fleet management system at 12 cruise operator sites across 3 continents.
 - Designed the technical architecture of product solutions considering shore-side and shipboard user bases, reservation systems, and data warehouse requirements.
 - Assisted in designing an Oracle BI-based solution for customized dashboards serving individual contributors, department heads, and functional group leaders.
@@ -59,7 +59,7 @@ _Technical Product Manager – Interface, EMEA Region_ · May 2005 – July 2007
 _Assistant Technical Product Manager – Interface, EMEA Region_ · June 2003 – April 2005
 
 - Coordinated integration validation requests for technicians across 20 countries in the EMEA region, serving as the primary technical liaison.
-- Led 30+ integration validation projects and collaborated with third-party developers to expand integrations with the Micros FIAS protocol.
+- Led over 30 projects validating and expanding third-party integrations with the Micros FIAS protocol across the EMEA region.
 - Contributed to the market launch of the next-generation integration solution, including beta testing and bug reporting.
 - Oversaw installations at luxury hotels in Austria, Belgium, the Dominican Republic, Dubai, Egypt, France, Germany, the Netherlands, and Spain.
 - Trained EMEA region technicians on setup, configuration, and troubleshooting of the next-generation integration platform.
@@ -79,7 +79,7 @@ _2nd Level Interface Support Agent, EMEA Region_ · April 2000 – May 2001
 
 _Hotel Management Intern_ · September 1998 – February 2000
 
-- Completed an 18-month management training program across 6 departments: kitchen, restaurant, banquet, housekeeping, reception, and airport transportation.
+- Completed 18 months of rotational management training across 6 departments: kitchen, restaurant, banquet, housekeeping, reception, and airport transportation.
 - Contributed to the pilot team that developed and launched Marriott's "At Your Service" initiative, improving guest service focus and satisfaction scores.
 
 ---
