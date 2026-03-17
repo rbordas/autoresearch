@@ -6,11 +6,11 @@ Fort Lauderdale, FL · (954) 937-5670 · rene.bordas@gmail.com · linkedin.com/i
 
 ## SUMMARY OF QUALIFICATIONS
 
-- Over 25 years of expertise in the international hospitality software sector, encompassing hotels, restaurants, casinos, and cruise ships.
-- 10+ years of P&L management experience within a major publicly traded corporation, consistently meeting or exceeding margin and renewal targets.
-- Proven track record in customer-facing technical roles, both as an individual contributor and as a global people manager overseeing teams of 40 employees.
-- Skilled in developing and delivering technical training programs, including curriculum design and hands-on facilitation for diverse audiences.
-- PhD candidate in Business Administration with research expertise in statistical analysis, IoT, and data analytics.
+- Built 25+ years of expertise in the international hospitality software sector, spanning hotels, restaurants, casinos, and cruise ships.
+- Managed P&L responsibilities across 2 business units for 10+ years within a major publicly traded corporation, consistently meeting or exceeding margin and renewal targets.
+- Led customer-facing technical teams of up to 40 employees globally, progressing from individual contributor to global director over a 25-year career.
+- Designed and delivered technical training programs with measurable milestones, combining lectures and hands-on activities for diverse audiences.
+- Pursuing a PhD in Business Administration with research expertise in statistical analysis, IoT systems, and data analytics.
 
 ---
 
@@ -25,7 +25,7 @@ _Director Operations, US, Oracle Hospitality – Cruise_ · October 2014 – Oct
 - Managed revenue and margin for 2 separate P&Ls (Consulting and Premier Support); met or exceeded margin goals every year since the Oracle acquisition in 2014.
 - Achieved 90%+ renewal rate for cruise customer support contracts in 2021 despite significant budget constraints caused by COVID-19.
 - Guided the acquired Fidelio Cruise team through Oracle America onboarding and integration, maintaining continuity of service across 3 regions during the transition.
-- Selected as a coach for the Oracle Leadership Development Program; mentored 6 managers to develop an organization-wide delivery quality improvement program.
+- Coached 6 global mid-level managers through the Oracle Leadership Development Program to develop an organization-wide delivery quality improvement initiative.
 - Prepared a global team of technical consultants to assist customers in transitioning from on-premise IT to cloud solutions.
 - Developed and implemented a scalable global organizational structure for Consulting, Premier Support, and Support Renewal Services.
 - Initiated and continue to facilitate a monthly virtual panel discussion for customers with Oracle product SMEs and technical leaders from cruise operator IT organizations.
@@ -58,7 +58,7 @@ _Implementation Consultant, North America Region_ · September 2007 – June 201
 _Technical Product Manager – Interface, EMEA Region_ · May 2005 – July 2007
 _Assistant Technical Product Manager – Interface, EMEA Region_ · June 2003 – April 2005
 
-- Acted as liaison for technicians across 20 countries in the EMEA region for new integration validation requests.
+- Coordinated integration validation requests for technicians across 20 countries in the EMEA region, serving as the primary technical liaison.
 - Led 30+ integration validation projects and collaborated with third-party developers to expand integrations with the Micros FIAS protocol.
 - Contributed to the market launch of the next-generation integration solution, including beta testing and bug reporting.
 - Oversaw installations at luxury hotels in Austria, Belgium, the Dominican Republic, Dubai, Egypt, France, Germany, the Netherlands, and Spain.
@@ -73,14 +73,14 @@ _2nd Level Interface Support Agent, EMEA Region_ · April 2000 – May 2001
 
 - Provided remote support for EMEA technicians installing integrations between Micros-Fidelio PMS and third-party systems, including POS, telephony, door key card, credit card payment, and building management systems.
 - Created detailed software bug reports with reproduction steps and log files for the US development team.
-- Traveled throughout the EMEA region to install and configure integrations between Micros-Fidelio PMS and third-party hospitality systems.
+- Installed and configured integrations between Micros-Fidelio PMS and third-party hospitality systems across multiple EMEA countries.
 
 **Nashville Airport Marriott** · Nashville, TN
 
 _Hotel Management Intern_ · September 1998 – February 2000
 
 - Completed an 18-month management training program across 6 departments: kitchen, restaurant, banquet, housekeeping, reception, and airport transportation.
-- Participated in the pilot team that developed and launched Marriott's "At Your Service" initiative to enhance guest service focus and satisfaction.
+- Contributed to the pilot team that developed and launched Marriott's "At Your Service" initiative, improving guest service focus and satisfaction scores.
 
 ---
 
@@ -120,27 +120,27 @@ _Hotel Management Intern_ · September 1998 – February 2000
 
 _FAU Tech Runway Mentor_ · 2020 – Present
 
-- Serve as a mentor within the FAU Tech Runway startup accelerator, assisting nascent founders with starting and scaling businesses, including niche definition, marketing, and pricing strategies.
-- Provide expertise in technical, managerial, and financial areas to early-stage ventures.
+- Coached nascent entrepreneurs within the FAU Tech Runway startup accelerator on starting and scaling businesses, including niche definition, marketing, and pricing strategies.
+- Delivered expertise in technical, managerial, and financial areas to early-stage ventures.
 
 _FAU Student Mentor, Business Mentor Program_ · 2020 – Present
 
-- Conduct bi-weekly or monthly meetings with FAU student mentees to address career interests and professional development.
-- Assist mentees with resume preparation, LinkedIn profile reviews, mock interviews, career guidance, and time management strategies.
+- Conducted bi-weekly or monthly meetings with FAU student mentees to address career interests and professional development.
+- Assisted mentees with resume preparation, LinkedIn profile reviews, mock interviews, career guidance, and time management strategies.
 
 **Oracle America Inc. Education Foundation** · Fort Lauderdale, FL
 
 _Coach, Neural Networks Student Workshops_ · 2020 – Present
 
-- Guide 10th–12th grade students through neural network assignments, helping them develop an image classification solution; provide feedback on project presentations.
-- Develop tutorials for students to build a LAMP/IoT solution using ESP32 components and Oracle Cloud Computing, tracking temperature and humidity data in real time via the Blynk app.
+- Guided 10th–12th grade students through neural network assignments, helping them develop an image classification solution; provided feedback on project presentations.
+- Developed tutorials for students to build a LAMP/IoT solution using ESP32 components and Oracle Cloud Computing, tracking temperature and humidity data in real time via the Blynk app.
 
 **Oracle America Inc.** · Fort Lauderdale, FL
 
 _STEM Coach, Regenerate Tech Partnership_ · 2019 – Present
 
-- Coach aspiring STEM students on projects involving MySQL, PHP, Oracle Cloud instance setup, and Apache web server configuration.
-- Offer feedback on student group project presentations covering IoT and cloud computing topics.
+- Coached aspiring STEM students on projects involving MySQL, PHP, Oracle Cloud instance setup, and Apache web server configuration.
+- Reviewed student group project presentations covering IoT and cloud computing topics and provided actionable feedback.
 
 ---
 
