@@ -1,0 +1,8 @@
+# metric_direction: higher_is_better
+# verify: python scripts/slt-score.py papers/lit-review/literature_review.md | grep "compliance"
+iteration	commit	metric	delta	guard	status	description
+0	b7e847d	45	0.0	-	baseline	initial state — SLT only in own section, not threaded through others
+1	e620d17	60	+15.0	-	keep	link SLT to Firm Growth summary paragraph
+2	fdeb42e	75	+15.0	-	keep	link SLT to Firm Survival summary paragraph
+3	65a5f70	90	+15.0	-	keep	fix Mentoring section: social learning + Bandura citation
+4	0f503fb	100	+10.0	-	keep	add SLT closing synthesis sentence — 100/100
