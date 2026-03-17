@@ -217,7 +217,13 @@ characteristics. Outlined methods for assessing survival include
 financial health, market presence, and stakeholder involvement, and
 indicating that some ventures may persist despite financial issues or
 close after achieving success (Ruhnka et al., 1992; Wennberg et al.,
-2010).
+2010). Social learning theory (Bandura, 1977) is particularly relevant
+here: many of the founder characteristics that mitigate survival risk —
+such as industry-specific experience and leadership ability — are
+themselves developed through observational learning and modeling of
+experienced entrepreneurs, underscoring the role of social learning
+processes in building the competencies that new ventures need to
+survive.
 
 The relationship between mentoring of entrepreneurs and firm survival
 and growth is pivotal in addressing the challenges identified by
