@@ -476,4 +476,9 @@ to be effective, the mentee must apply the acquired knowledge to their
 venture, experiment with the mentor's suggestions, and assess their
 outcomes. This iterative approach helps the mentee acquire valuable
 skills and insights, contributing to the venture's long-term competitive
-advantage and mitigating risks associated with being new or small.
+advantage and mitigating risks associated with being new or small. In
+sum, social learning theory (Bandura, 1977) serves as the integrating
+framework across this literature review — explaining how
+observational learning, feedback, and role modeling connect
+entrepreneurial mentoring, firm survival, and new venture growth into a
+coherent theoretical foundation for this study.
