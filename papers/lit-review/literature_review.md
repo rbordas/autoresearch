@@ -120,7 +120,12 @@ valuable, rare, imperfectly inimitable, and non-substitutable (VRIN)
 resources. Additionally, studies suggest that entrepreneurs need to
 actively seek growth opportunities, with success depending on the
 availability of resources, strategic decisions, and supportive
-environments (Baum et al., 2001; Chrisman et al., 1998).
+environments (Baum et al., 2001; Chrisman et al., 1998). Social
+learning theory (Bandura, 1977) provides a complementary lens for
+understanding how entrepreneurs acquire the growth-oriented behaviors
+and resource strategies described above — by observing experienced
+peers, absorbing feedback, and modeling the practices of successful
+ventures in their environment.
 
 ## Firm Survival
 
