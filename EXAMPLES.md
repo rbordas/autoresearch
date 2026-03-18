@@ -720,7 +720,16 @@ Goal: Ensure all literature review sections follow PRISMA checklist
 Scope: papers/lit-review/**/*.md
 Metric: PRISMA checklist compliance % (higher is better)
 Verify: python scripts/prisma-check.py | grep "compliance"
+``````
+
 ```
+/autoresearch
+Iterations: 15
+Goal: Ensure all literature review sections follow POLR (Provisional Outline Literature review) Method
+Scope: papers/lit-review/**/*.md
+Metric: POLR (Provisional Outline Literature review) Method compliance % (higher is better)
+Verify: python scripts/POLR-check.py | grep "compliance"
+``````
 
 ### Data analysis report quality
 
