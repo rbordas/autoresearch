@@ -1,0 +1,7 @@
+# metric_direction: higher_is_better
+# verify: python scripts/POLR-check.py | grep "compliance"
+iteration	commit	metric	delta	guard	status	description
+0	18553d0	74	0.0	-	baseline	initial state — purpose sentences + transitions gaps identified
+1	31e13a3	85	+11.0	-	keep	add purpose/question-framing sentences to Firm Survival, Mentoring, SLT
+2	5e1b422	90	+5.0	-	keep	add In summary synthesis paragraph to SLT section
+3	70b5da5	100	+10.0	-	keep	add bridging transitions intro->Growth and Growth->Survival
