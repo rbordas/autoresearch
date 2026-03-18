@@ -129,6 +129,9 @@ ventures in their environment.
 
 ## Firm Survival
 
+This section examines firm survival as the second key dimension of new
+venture performance, addressing the question of what factors determine
+whether a new venture can sustain independent operations over time.
 Survival is a performance measure that indicates a venture's capacity to
 independently operate (Barney, 1986; Chrisman et al., 1998). The
 opposite is venture failure, and is reached when the venture can no
@@ -245,6 +248,11 @@ driving venture growth (Nason & Wiklund, 2018).
 
 ## Mentoring and Entrepreneurs
 
+This section explores mentoring as the primary intervention mechanism
+through which entrepreneurs in this study develop the knowledge and
+skills needed to improve new venture performance. It addresses the
+question of how mentoring relationships function and what outcomes they
+produce for nascent entrepreneurs.
 According to scholarly works, the origins of mentorship are traced back
 to the realm of ancient Greek mythology. The term "mentor" finds its
 roots in Homer's *The Odyssey*. Odysseus entrusts his son Telemachus to
@@ -402,7 +410,11 @@ overall success in entrepreneurship (Brodie et al., 2017; St-Jean,
 
 ## Social Learning Theory
 
-Bandura's (1977) social learning theory asserts that individuals learn
+This section presents social learning theory as the primary theoretical
+framework for this study, addressing the question of how observational
+learning and modeling explain the process through which entrepreneur
+mentees acquire the behaviors and strategies that drive new venture
+performance. Bandura's (1977) social learning theory asserts that individuals learn
 by observing others, receiving feedback, and modeling behaviors they
 have observed. This theory emphasizes that learning involves a
 continuous, reciprocal interaction among cognitive, behavioral, and
