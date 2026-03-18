@@ -7,7 +7,7 @@
 Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) — constraint + mechanical metric + autonomous iteration = compounding gains.
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue?logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
-[![Version](https://img.shields.io/badge/version-1.6.2-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
+[![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Based on](https://img.shields.io/badge/Based_on-Karpathy's_Autoresearch-orange)](https://github.com/karpathy/autoresearch)
 [![Follow @iuditg](https://img.shields.io/badge/Follow-@iuditg-000000?style=flat&logo=x&logoColor=white)](https://x.com/intent/follow?screen_name=iuditg)
@@ -87,6 +87,7 @@ Before looping, Claude performs a one-time setup:
 | `/autoresearch:debug` | Autonomous bug-hunting loop — scientific method + iterative investigation |
 | `/autoresearch:fix` | Autonomous fix loop — iteratively repair errors until zero remain |
 | `/autoresearch:scenario` | Scenario-driven use case generator — explore situations, edge cases, derivative scenarios |
+| `/autoresearch:predict` | Multi-persona prediction | Pre-analyze code from 5 expert perspectives before acting |
 | `Guard: <command>` | Optional safety net — must pass for changes to be kept |
 
 **All commands use `AskUserQuestion` for interactive setup when invoked without arguments.** Just type the command — Claude will ask you what you need step by step with smart defaults based on your codebase. Power users can skip the wizard by providing flags inline.
@@ -107,6 +108,8 @@ Before looping, Claude performs a one-time setup:
 | Explore edge cases for a feature | `/autoresearch:scenario` |
 | Generate test scenarios | `/autoresearch:scenario --domain software --format test-scenarios` |
 | Stress test a user journey | `/autoresearch:scenario --depth deep` |
+| I want expert opinions before I start | `/autoresearch:predict` |
+| Analyze this from multiple angles | `/autoresearch:predict --chain debug` |
 
 ---
 
@@ -261,6 +264,18 @@ Takes a broken state and iteratively repairs it until everything passes. ONE fix
 | `--from-debug` | Read findings from latest debug session |
 
 **Chain them:** Run `/autoresearch:debug` with `Iterations: 15`, then `/autoresearch:fix --from-debug` with `Iterations: 30`
+
+---
+
+## /autoresearch:predict — Multi-Persona Prediction (v1.7.0)
+
+Before you debug, fix, or ship — get 5 expert perspectives in 2 minutes.
+
+`/autoresearch:predict` simulates a team of experts (Architect, Security Analyst, Performance Engineer, Reliability Engineer, Devil's Advocate) who independently analyze your code, debate findings, and reach consensus. Chain the output directly to any other command:
+
+- `/autoresearch:predict --chain debug` — pre-ranked hypotheses before debugging
+- `/autoresearch:predict --chain security` — multi-persona red team analysis
+- `/autoresearch:predict --chain scenario,debug,fix` — full quality pipeline
 
 ---
 

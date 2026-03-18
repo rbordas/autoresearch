@@ -2,7 +2,7 @@
 
 Real-world examples organized by domain, with practical configurations you can copy-paste.
 
-[Software Engineering](#software-engineering) · [Python & Django](#python--django) · [Go](#go) · [Rust](#rust) · [Sales & Lead Generation](#sales--lead-generation) · [Marketing](#marketing) · [HR & People Ops](#hr--people-ops) · [Operations](#operations) · [Performance Marketing](#performance-marketing) · [Data Science](#data-science) · [DevOps](#devops) · [Web Scraping & Data Collection](#web-scraping--data-collection) · [Research & Analysis](#research--analysis) · [Design & Accessibility](#design--accessibility) · [Debug Examples](#debug-examples) · [Fix Examples](#fix-examples) · [Scenario Examples](#scenario-examples) · [Command Chains](#command-chains) · [Guard Patterns](#guard-patterns) · [MCP Servers](#combining-with-mcp-servers) · [API Patterns](#combining-with-apis) · [Claude Code Patterns](#claude-code-patterns) · [Plan Wizard Examples](#plan-wizard-examples) · [Security Audit Examples](#security-audit-examples) · [Ship Workflow Examples](#ship-workflow-examples) · [Verification Scripts](#writing-verification-scripts) · [Core Principles](#core-principles)
+[Software Engineering](#software-engineering) · [Python & Django](#python--django) · [Go](#go) · [Rust](#rust) · [Sales & Lead Generation](#sales--lead-generation) · [Marketing](#marketing) · [HR & People Ops](#hr--people-ops) · [Operations](#operations) · [Performance Marketing](#performance-marketing) · [Data Science](#data-science) · [DevOps](#devops) · [Web Scraping & Data Collection](#web-scraping--data-collection) · [Research & Analysis](#research--analysis) · [Design & Accessibility](#design--accessibility) · [Debug Examples](#debug-examples) · [Fix Examples](#fix-examples) · [Scenario Examples](#scenario-examples) · [Command Chains](#command-chains) · [Guard Patterns](#guard-patterns) · [MCP Servers](#combining-with-mcp-servers) · [API Patterns](#combining-with-apis) · [Claude Code Patterns](#claude-code-patterns) · [Plan Wizard Examples](#plan-wizard-examples) · [Security Audit Examples](#security-audit-examples) · [Ship Workflow Examples](#ship-workflow-examples) · [Predict Examples](#predict-examples) · [Predict Chains](#predict-chains) · [Verification Scripts](#writing-verification-scripts) · [Core Principles](#core-principles)
 
 ---
 
@@ -1841,6 +1841,160 @@ Iterations: 5
 # Just check if ready
 /autoresearch:ship --checklist-only
 ```
+
+---
+
+## Predict Examples
+
+### Pre-debug investigation (v1.7.0)
+
+```
+/autoresearch:predict --chain debug
+Scope: src/api/**/*.ts
+Goal: Investigate intermittent 500 errors on POST /users
+```
+
+5 personas analyze the API code independently. Architecture Reviewer traces data flow, Security Analyst checks auth middleware order, Performance Engineer profiles query patterns, Reliability Engineer examines error handling, Devil's Advocate asks "what if it's infrastructure?" Consensus produces ranked hypothesis queue. Debug loop tests hypotheses in priority order — finds root cause in 2-4 iterations instead of 10+.
+
+### Pre-deployment security review (v1.7.0)
+
+```
+/autoresearch:predict --adversarial --chain security
+Scope: src/auth/**, src/api/**, src/middleware/**
+Goal: Security audit before production deploy
+```
+
+Uses adversarial persona set: Red Team Attacker finds exploits, Blue Team Defender validates defenses, Insider Threat examines privilege escalation, Supply Chain Analyst audits dependencies, Judge evaluates evidence. Produces attack vectors ranked by exploitability, feeds directly into security audit.
+
+### Architecture review before refactor (v1.7.0)
+
+```
+/autoresearch:predict --depth deep
+Scope: src/**
+Goal: Architecture review — should we split into microservices?
+```
+
+8 personas (deep mode), 3 debate rounds. Each persona analyzes coupling, dependency patterns, and scalability from their unique perspective. Consensus may be split — if so, predict preserves minority opinions and flags groupthink risk.
+
+### Quick code quality scan (v1.7.0)
+
+```
+/autoresearch:predict --depth shallow
+Scope: src/checkout/**
+Goal: Code quality check on new checkout feature
+```
+
+3 personas, 1 debate round. Fast sweep for obvious issues. Takes ~1 minute. Good for quick sanity check before PR.
+
+### Post-upgrade impact analysis (v1.7.0)
+
+```
+/autoresearch:predict --chain fix
+Scope: src/**/*.ts
+Goal: Predict impact of React 18→19 upgrade
+```
+
+Personas analyze usage patterns against known breaking changes. Performance Engineer predicts rendering behavior changes. Architecture Reviewer identifies deprecated API usage. Fix loop receives cascade-aware priority queue.
+
+### Full quality pipeline (v1.7.0)
+
+```
+/autoresearch:predict --chain scenario,debug,security,fix,ship
+Scope: src/**
+Goal: Complete quality pipeline for v2.0 release
+```
+
+Single command runs the entire pipeline: predict → scenario (generate edge cases) → debug (hunt bugs) → security (audit vulnerabilities) → fix (repair everything) → ship (deploy with confidence). Each stage's findings feed into the next. Zero context loss.
+
+### CI/CD security gate (v1.7.0)
+
+```
+/autoresearch:predict --fail-on critical --budget 0.50 --depth shallow
+Scope: src/**
+Goal: Security check
+Iterations: 1
+```
+
+Lightweight predict in CI pipeline. Fails the build if any critical finding. Budget-capped at $0.50. Takes ~90 seconds.
+
+### Custom personas (v1.7.0)
+
+```
+/autoresearch:predict
+Scope: src/payments/**
+Goal: Payment processing reliability
+Personas: Payment Expert, Fraud Analyst, Compliance Officer, Database Specialist, Devil's Advocate
+```
+
+Override default personas with domain-specific experts. Each persona brings specialized knowledge to the analysis.
+
+### Incremental analysis (v1.7.0)
+
+```
+/autoresearch:predict --incremental
+Scope: src/**
+Goal: What changed since last analysis?
+```
+
+Reuses existing knowledge files (codebase-analysis.md, dependency-map.md), only re-analyzes files changed since last predict run. Faster on subsequent runs.
+
+---
+
+## Predict Chains
+
+### Predict → Debug (hypothesis-driven debugging)
+
+```
+/autoresearch:predict --chain debug
+Scope: src/auth/**
+Goal: Why do JWT tokens expire prematurely?
+```
+
+**Without predict:** Claude guesses → tests → wrong → guesses again → 10 iterations to root cause.
+**With predict:** 5 experts debate → ranked hypotheses → debug tests in order → 2-3 iterations to root cause.
+
+### Predict → Security (multi-persona red team)
+
+```
+/autoresearch:predict --adversarial --chain security
+Scope: src/api/**
+Goal: Find attack chains before pen test
+```
+
+**Without predict:** Single agent walks OWASP checklist → finds individual vulnerabilities.
+**With predict:** 5 adversarial personas find multi-step attack chains → security validates each with code evidence.
+
+### Predict → Fix (cascade-aware repair)
+
+```
+/autoresearch:predict --chain fix
+Scope: src/**
+Goal: Fix all type errors after dependency upgrade
+```
+
+**Without predict:** Fix errors one by one → 47 iterations.
+**With predict:** Personas identify 3 root type errors that cascade to 30 test failures → fix roots first → 13 iterations.
+
+### Predict → Ship (stakeholder risk simulation)
+
+```
+/autoresearch:predict --chain ship
+Scope: src/**
+Goal: Pre-deployment risk assessment
+```
+
+**Without predict:** Mechanical checklist only (tests, lint, build).
+**With predict:** Personas simulate stakeholder impact — "Customer Support predicts 200+ password reset tickets from session migration." Catches soft risks.
+
+### Predict → Scenario → Debug → Fix (full pipeline)
+
+```
+/autoresearch:predict --chain scenario,debug,fix
+Scope: src/checkout/**
+Goal: Ensure checkout feature handles all edge cases
+```
+
+Predict generates findings → scenario explores edge cases from those findings → debug hunts bugs in identified risk areas → fix repairs everything with cascade awareness. Single command, zero context loss.
 
 ---
 

@@ -46,7 +46,8 @@ autoresearch/
 │       ├── ship.md                                ← /autoresearch:ship registration
 │       ├── debug.md                               ← /autoresearch:debug registration
 │       ├── fix.md                                 ← /autoresearch:fix registration
-│       └── scenario.md                            ← /autoresearch:scenario registration
+│       ├── scenario.md                            ← /autoresearch:scenario registration
+│       └── predict.md                             ← /autoresearch:predict registration
 ├── skills/
 │   └── autoresearch/
 │       ├── SKILL.md                               ← Main skill (loaded by Claude Code)
@@ -59,6 +60,7 @@ autoresearch/
 │           ├── debug-workflow.md                  ← Debug loop protocol
 │           ├── fix-workflow.md                    ← Fix loop protocol
 │           ├── scenario-workflow.md               ← Scenario exploration protocol
+│           ├── predict-workflow.md                ← Multi-persona swarm prediction workflow
 │           └── results-logging.md                 ← TSV tracking format
 └── scripts/
     ├── release.sh                                 ← Release script (version bump + PR + tag)
@@ -78,6 +80,7 @@ autoresearch/
 | `references/debug-workflow.md` | `/autoresearch:debug` bug-hunting protocol. | Adding investigation techniques, bug patterns, domain checklists |
 | `references/fix-workflow.md` | `/autoresearch:fix` error repair protocol. | Adding fix strategies, anti-patterns, language-specific patterns |
 | `references/scenario-workflow.md` | `/autoresearch:scenario` scenario exploration. | Adding domains, dimensions, output formats |
+| `references/predict-workflow.md` | `/autoresearch:predict` multi-persona swarm prediction workflow (751 lines). | Adding prediction personas, confidence models, output formats |
 | `references/results-logging.md` | TSV log format and reporting rules. | Changing log columns, summary format, reporting intervals |
 | `commands/autoresearch/*.md` | Sub-command registration files. | Adding new sub-commands (creates the `/autoresearch:name` slash command) |
 | `.claude-plugin/plugin.json` | Plugin metadata + version. | Version bumps (use `scripts/release.sh`) |
@@ -254,7 +257,7 @@ Maintainers use `scripts/release.sh` to handle releases. See `scripts/release.md
 
 ```bash
 # Patch release (bugfixes, docs updates)
-./scripts/release.sh 1.6.3 --title "Fix scenario timeout"
+./scripts/release.sh 1.7.1 --title "Fix scenario timeout"
 
 # Minor release (new features, new commands)
 ./scripts/release.sh 1.7.0 --title "New Sub-Command Name"

@@ -1,7 +1,7 @@
 ---
 name: autoresearch
 description: Autonomous Goal-directed Iteration. Apply Karpathy's autoresearch principles to ANY task. Loops autonomously — modify, verify, keep/discard, repeat. Supports bounded iteration via Iterations: N inline config.
-version: 1.6.1
+version: 1.7.0
 ---
 
 # Claude Autoresearch — Autonomous Goal-directed Iteration
@@ -14,7 +14,7 @@ Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
 
 **CRITICAL — READ THIS FIRST BEFORE ANY ACTION:**
 
-For ALL commands (`/autoresearch`, `/autoresearch:plan`, `/autoresearch:debug`, `/autoresearch:fix`, `/autoresearch:security`, `/autoresearch:ship`, `/autoresearch:scenario`):
+For ALL commands (`/autoresearch`, `/autoresearch:plan`, `/autoresearch:debug`, `/autoresearch:fix`, `/autoresearch:security`, `/autoresearch:ship`, `/autoresearch:scenario`, `/autoresearch:predict`):
 
 1. **Check if the user provided ALL required context inline** (Goal, Scope, Metric, flags, etc.)
 2. **If ANY required context is missing → you MUST use `AskUserQuestion` to collect it BEFORE proceeding to any execution phase.** DO NOT skip this step. DO NOT proceed without user input.
@@ -29,6 +29,7 @@ For ALL commands (`/autoresearch`, `/autoresearch:plan`, `/autoresearch:debug`, 
 | `/autoresearch:security` | Scope, Depth | 3 batched questions per `references/security-workflow.md` |
 | `/autoresearch:ship` | What/Type, Mode | 3 batched questions per `references/ship-workflow.md` |
 | `/autoresearch:scenario` | Scenario, Domain | 4-8 adaptive questions per `references/scenario-workflow.md` |
+| `/autoresearch:predict` | Scope, Goal | 3-4 batched questions per `references/predict-workflow.md` |
 
 **YOU MUST NOT start any loop, phase, or execution without completing interactive setup when context is missing. This is a BLOCKING prerequisite.**
 
@@ -43,6 +44,7 @@ For ALL commands (`/autoresearch`, `/autoresearch:plan`, `/autoresearch:debug`, 
 | `/autoresearch:debug` | Autonomous bug-hunting loop: scientific method + iterative investigation until codebase is clean |
 | `/autoresearch:fix` | Autonomous fix loop: iteratively repair errors (tests, types, lint, build) until zero remain |
 | `/autoresearch:scenario` | Scenario-driven use case generator: explore situations, edge cases, and derivative scenarios |
+| `/autoresearch:predict` | Multi-persona swarm prediction: pre-analyze code from multiple expert perspectives before acting |
 
 ### /autoresearch:security — Autonomous Security Audit (v1.0.3)
 
@@ -259,6 +261,76 @@ Iterations: 30
 Scenario: REST API pagination with filtering and sorting
 ```
 
+### /autoresearch:predict — Multi-Persona Swarm Prediction (v1.0.0)
+
+Multi-perspective code analysis using swarm intelligence principles. Simulates 3-5 expert personas (Architect, Security Analyst, Performance Engineer, Reliability Engineer, Devil's Advocate) that independently analyze code, debate findings, and reach consensus — all within Claude's native context. Zero external dependencies.
+
+Load: `references/predict-workflow.md` for full protocol.
+
+**What it does:**
+
+1. **Codebase Reconnaissance** — scan files, extract entities, map dependencies into knowledge .md files
+2. **Persona Generation** — create 3-5 expert personas from codebase context
+3. **Independent Analysis** — each persona analyzes code from their unique perspective
+4. **Structured Debate** — 1-2 rounds of cross-examination with mandatory Devil's Advocate dissent
+5. **Consensus** — synthesizer aggregates findings with confidence scores + anti-herd check
+6. **Knowledge Output** — write predict/ folder with codebase-analysis.md, dependency-map.md, component-clusters.md
+7. **Report** — generate findings.md, hypothesis-queue.md, overview.md
+8. **Handoff** — write handoff.json for optional --chain to debug/security/fix/ship/scenario
+
+**Key behaviors:**
+- File-based knowledge representation: .md files ARE the knowledge graph, zero external deps
+- Git-hash stamping: every output embeds commit SHA for staleness detection
+- Incremental updates: only re-analyzes files changed since last run
+- Anti-herd mechanism: Devil's Advocate mandatory, groupthink detection via flip rate + entropy
+- Empirical evidence always trumps swarm prediction when chained with autoresearch loop
+- Composite metric: `findings_confirmed*15 + findings_probable*8 + minority_preserved*3 + (personas/total)*20 + (rounds/planned)*10 + anti_herd_passed*5`
+- Creates `predict/{YYMMDD}-{HHMM}-{slug}/` folder with: `overview.md`, `codebase-analysis.md`, `dependency-map.md`, `component-clusters.md`, `persona-debates.md`, `hypothesis-queue.md`, `findings.md`, `predict-results.tsv`, `handoff.json`
+
+**Flags:**
+
+| Flag | Purpose |
+|------|---------|
+| `--chain <targets>` | Chain to tools. Single: `--chain debug`. Multi: `--chain scenario,debug,fix` (sequential) |
+| `--personas N` | Number of personas (default: 5, range: 3-8) |
+| `--rounds N` | Debate rounds (default: 2, range: 1-3) |
+| `--depth <level>` | Depth preset: shallow (3 personas, 1 round), standard (5, 2), deep (8, 3) |
+| `--adversarial` | Use adversarial persona set (Red Team, Blue Team, Insider, Supply Chain, Judge) |
+| `--budget <dollars>` | Max LLM cost for this session (default: $1.00) |
+| `--fail-on <severity>` | Exit non-zero if findings at or above severity (for CI/CD) |
+| `--scope <glob>` | Limit analysis to specific files |
+
+**Usage:**
+```
+# Standard analysis
+/autoresearch:predict
+Scope: src/**/*.ts
+Goal: Find reliability issues
+
+# Quick security scan
+/autoresearch:predict --depth shallow --chain security
+Scope: src/api/**
+
+# Deep analysis with adversarial debate
+/autoresearch:predict --depth deep --adversarial
+Goal: Pre-deployment quality audit
+
+# CI/CD gate
+/autoresearch:predict --fail-on critical --budget 0.50
+Scope: src/**
+Iterations: 1
+
+# Chain to debug for hypothesis-driven investigation
+/autoresearch:predict --chain debug
+Scope: src/auth/**
+Goal: Investigate intermittent 500 errors
+
+# Multi-chain: predict → scenario → debug → fix (sequential pipeline)
+/autoresearch:predict --chain scenario,debug,fix
+Scope: src/**
+Goal: Full quality pipeline for new feature
+```
+
 ### /autoresearch:plan — Goal → Configuration Wizard
 
 Converts a plain-language goal into a validated, ready-to-execute autoresearch configuration.
@@ -307,6 +379,8 @@ After the wizard completes, the user gets a ready-to-paste `/autoresearch` invoc
 - User says "fix all errors", "make tests pass", "fix the build", "clean up errors" → run the fix loop
 - User invokes `/autoresearch:scenario` → run the scenario loop
 - User says "explore scenarios", "generate use cases", "what could go wrong", "stress test this feature", "edge cases for" → run the scenario loop
+- User invokes `/autoresearch:predict` → run the predict workflow
+- User says "predict", "multi-perspective", "swarm analysis", "what do multiple experts think", "analyze from different angles" → run the predict workflow
 - User says "work autonomously", "iterate until done", "keep improving", "run overnight" → run the loop
 - Any task requiring repeated iteration cycles with measurable outcomes → run the loop
 
@@ -439,5 +513,6 @@ See `references/core-principles.md` for the 7 generalizable principles from auto
 | Fixing | Error count (lower) | Target files | `/autoresearch:fix` | `npm test` |
 | Scenario analysis | Scenario coverage score (higher) | Feature/domain files | `/autoresearch:scenario` | — |
 | Scenarios | Use cases + edge cases + dimension coverage | Target feature/files | `/autoresearch:scenario` | — |
+| Prediction | Findings + hypotheses (higher) | Target files | `/autoresearch:predict` | — |
 
 Adapt the loop to your domain. The PRINCIPLES are universal; the METRICS are domain-specific.
