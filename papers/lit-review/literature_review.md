@@ -36,7 +36,9 @@ the strategy (Carroll, 1983; Gimenez-Fernandez et al., 2020). With
 lagging growth, new and smaller ventures face increased risks for
 survival. However, as ventures grow larger and older, the negative
 effects of the liabilities of newness and size diminish (Freeman et al.,
-1983; Gilbert et al., 2006).
+1983; Gilbert et al., 2006). The following section examines firm growth
+as the first of these two performance dimensions, before turning to
+firm survival.
 
 ## Firm Growth
 
@@ -125,7 +127,9 @@ learning theory (Bandura, 1977) provides a complementary lens for
 understanding how entrepreneurs acquire the growth-oriented behaviors
 and resource strategies described above — by observing experienced
 peers, absorbing feedback, and modeling the practices of successful
-ventures in their environment.
+ventures in their environment. Having established the determinants of
+firm growth, attention now turns to the second dimension of new venture
+performance: firm survival.
 
 ## Firm Survival
 
