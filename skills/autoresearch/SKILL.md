@@ -1,7 +1,7 @@
 ---
 name: autoresearch
 description: Autonomous Goal-directed Iteration. Apply Karpathy's autoresearch principles to ANY task. Loops autonomously — modify, verify, keep/discard, repeat. Supports bounded iteration via Iterations: N inline config.
-version: 1.4.0
+version: 1.7.3
 ---
 
 # Claude Autoresearch — Autonomous Goal-directed Iteration
@@ -9,6 +9,29 @@ version: 1.4.0
 Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch). Applies constraint-driven autonomous iteration to ANY work — not just ML research.
 
 **Core idea:** You are an autonomous agent. Modify → Verify → Keep/Discard → Repeat.
+
+## MANDATORY: Interactive Setup Gate
+
+**CRITICAL — READ THIS FIRST BEFORE ANY ACTION:**
+
+For ALL commands (`/autoresearch`, `/autoresearch:plan`, `/autoresearch:debug`, `/autoresearch:fix`, `/autoresearch:security`, `/autoresearch:ship`, `/autoresearch:scenario`, `/autoresearch:predict`):
+
+1. **Check if the user provided ALL required context inline** (Goal, Scope, Metric, flags, etc.)
+2. **If ANY required context is missing → you MUST use `AskUserQuestion` to collect it BEFORE proceeding to any execution phase.** DO NOT skip this step. DO NOT proceed without user input.
+3. Each subcommand's reference file has an "Interactive Setup" section — follow it exactly when context is missing.
+
+| Command | Required Context | If Missing → Ask |
+|---------|-----------------|-----------------|
+| `/autoresearch` | Goal, Scope, Metric, Direction, Verify | Batch 1 (4 questions) + Batch 2 (3 questions) from Setup Phase below |
+| `/autoresearch:plan` | Goal | Ask via `AskUserQuestion` per `references/plan-workflow.md` |
+| `/autoresearch:debug` | Issue/Symptom, Scope | 4 batched questions per `references/debug-workflow.md` |
+| `/autoresearch:fix` | Target, Scope | 4 batched questions per `references/fix-workflow.md` |
+| `/autoresearch:security` | Scope, Depth | 3 batched questions per `references/security-workflow.md` |
+| `/autoresearch:ship` | What/Type, Mode | 3 batched questions per `references/ship-workflow.md` |
+| `/autoresearch:scenario` | Scenario, Domain | 4-8 adaptive questions per `references/scenario-workflow.md` |
+| `/autoresearch:predict` | Scope, Goal | 3-4 batched questions per `references/predict-workflow.md` |
+
+**YOU MUST NOT start any loop, phase, or execution without completing interactive setup when context is missing. This is a BLOCKING prerequisite.**
 
 ## Subcommands
 
@@ -20,8 +43,10 @@ Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
 | `/autoresearch:ship` | Universal shipping workflow: ship code, content, marketing, sales, research, or anything |
 | `/autoresearch:debug` | Autonomous bug-hunting loop: scientific method + iterative investigation until codebase is clean |
 | `/autoresearch:fix` | Autonomous fix loop: iteratively repair errors (tests, types, lint, build) until zero remain |
+| `/autoresearch:scenario` | Scenario-driven use case generator: explore situations, edge cases, and derivative scenarios |
+| `/autoresearch:predict` | Multi-persona swarm prediction: pre-analyze code from multiple expert perspectives before acting |
 
-### /autoresearch:security — Autonomous Security Audit (v1.0.3)
+### /autoresearch:security — Autonomous Security Audit
 
 Runs a comprehensive security audit using the autoresearch loop pattern. Generates a full STRIDE threat model, maps attack surfaces, then iteratively tests each vulnerability vector — logging findings with severity, OWASP category, and code evidence.
 
@@ -89,7 +114,7 @@ Iterations: 15
 - OWASP Top 10 (2021) — industry-standard vulnerability taxonomy
 - STRIDE — Microsoft's threat modeling framework
 
-### /autoresearch:ship — Universal Shipping Workflow (v1.1.0)
+### /autoresearch:ship — Universal Shipping Workflow
 
 Ship anything — code, content, marketing, sales, research, or design — through a structured 8-phase workflow that applies autoresearch loop principles to the last mile.
 
@@ -176,6 +201,136 @@ Score of 100 = fully ready. Below 80 = not shippable.
 
 **Output directory:** Creates `ship/{YYMMDD}-{HHMM}-{ship-slug}/` with `checklist.md`, `ship-log.tsv`, `summary.md`.
 
+### /autoresearch:scenario — Scenario-Driven Use Case Generator
+
+Autonomous scenario exploration engine that generates, expands, and stress-tests use cases from a seed scenario. Discovers edge cases, failure modes, and derivative scenarios that manual analysis misses.
+
+Load: `references/scenario-workflow.md` for full protocol.
+
+**What it does:**
+
+1. **Seed Analysis** — parse scenario, identify actors, goals, preconditions, components
+2. **Decomposition** — break into 12 exploration dimensions (happy path, error, edge case, abuse, scale, concurrent, temporal, data variation, permission, integration, recovery, state transition)
+3. **Situation Generation** — create one concrete situation per iteration from unexplored dimensions
+4. **Classification** — deduplicate (new/variant/duplicate/out-of-scope/low-value)
+5. **Expansion** — derive edge cases, what-ifs, failure modes from each kept situation
+6. **Logging** — record to scenario-results.tsv with dimension, severity, classification
+7. **Repeat** — pick next unexplored dimension/combination, iterate
+
+**Key behaviors:**
+- Adaptive interactive setup: 4-8 questions based on how much context the user provides
+- 12 exploration dimensions ensure comprehensive coverage
+- Domain-specific templates (software, product, business, security, marketing)
+- Every situation requires concrete trigger, flow, and expected outcome — no vague "something goes wrong"
+- Composite metric: `scenarios_generated*10 + edge_cases_found*15 + (dimensions_covered/12)*30 + unique_actors*5`
+- Creates `scenario/{YYMMDD}-{HHMM}-{slug}/` with: `scenarios.md`, `use-cases.md`, `edge-cases.md`, `scenario-results.tsv`, `summary.md`
+
+**Flags:**
+
+| Flag | Purpose |
+|------|---------|
+| `--domain <type>` | Set domain (software, product, business, security, marketing) |
+| `--depth <level>` | Exploration depth: shallow (10), standard (25), deep (50+) |
+| `--scope <glob>` | Limit to specific files/features |
+| `--format <type>` | Output: use-cases, user-stories, test-scenarios, threat-scenarios, mixed |
+| `--focus <area>` | Prioritize dimension: edge-cases, failures, security, scale |
+
+**Usage:**
+```
+# Unlimited — keep exploring until interrupted
+/autoresearch:scenario
+
+# Bounded with context
+/autoresearch:scenario
+Scenario: User attempts checkout with multiple payment methods
+Domain: software
+Depth: standard
+Iterations: 25
+
+# Quick edge case scan
+/autoresearch:scenario --depth shallow --focus edge-cases
+Scenario: File upload feature for profile pictures
+
+# Security-focused
+/autoresearch:scenario --domain security
+Scenario: OAuth2 login flow with third-party providers
+Iterations: 30
+
+# Generate test scenarios
+/autoresearch:scenario --format test-scenarios --domain software
+Scenario: REST API pagination with filtering and sorting
+```
+
+### /autoresearch:predict — Multi-Persona Swarm Prediction
+
+Multi-perspective code analysis using swarm intelligence principles. Simulates 3-5 expert personas (Architect, Security Analyst, Performance Engineer, Reliability Engineer, Devil's Advocate) that independently analyze code, debate findings, and reach consensus — all within Claude's native context. Zero external dependencies.
+
+Load: `references/predict-workflow.md` for full protocol.
+
+**What it does:**
+
+1. **Codebase Reconnaissance** — scan files, extract entities, map dependencies into knowledge .md files
+2. **Persona Generation** — create 3-5 expert personas from codebase context
+3. **Independent Analysis** — each persona analyzes code from their unique perspective
+4. **Structured Debate** — 1-2 rounds of cross-examination with mandatory Devil's Advocate dissent
+5. **Consensus** — synthesizer aggregates findings with confidence scores + anti-herd check
+6. **Knowledge Output** — write predict/ folder with codebase-analysis.md, dependency-map.md, component-clusters.md
+7. **Report** — generate findings.md, hypothesis-queue.md, overview.md
+8. **Handoff** — write handoff.json for optional --chain to debug/security/fix/ship/scenario
+
+**Key behaviors:**
+- File-based knowledge representation: .md files ARE the knowledge graph, zero external deps
+- Git-hash stamping: every output embeds commit SHA for staleness detection
+- Incremental updates: only re-analyzes files changed since last run
+- Anti-herd mechanism: Devil's Advocate mandatory, groupthink detection via flip rate + entropy
+- Empirical evidence always trumps swarm prediction when chained with autoresearch loop
+- Composite metric: `findings_confirmed*15 + findings_probable*8 + minority_preserved*3 + (personas/total)*20 + (rounds/planned)*10 + anti_herd_passed*5`
+- Creates `predict/{YYMMDD}-{HHMM}-{slug}/` folder with: `overview.md`, `codebase-analysis.md`, `dependency-map.md`, `component-clusters.md`, `persona-debates.md`, `hypothesis-queue.md`, `findings.md`, `predict-results.tsv`, `handoff.json`
+
+**Flags:**
+
+| Flag | Purpose |
+|------|---------|
+| `--chain <targets>` | Chain to tools. Single: `--chain debug`. Multi: `--chain scenario,debug,fix` (sequential) |
+| `--personas N` | Number of personas (default: 5, range: 3-8) |
+| `--rounds N` | Debate rounds (default: 2, range: 1-3) |
+| `--depth <level>` | Depth preset: shallow (3 personas, 1 round), standard (5, 2), deep (8, 3) |
+| `--adversarial` | Use adversarial persona set (Red Team, Blue Team, Insider, Supply Chain, Judge) |
+| `--budget <dollars>` | Max LLM cost for this session (default: $1.00) |
+| `--fail-on <severity>` | Exit non-zero if findings at or above severity (for CI/CD) |
+| `--scope <glob>` | Limit analysis to specific files |
+
+**Usage:**
+```
+# Standard analysis
+/autoresearch:predict
+Scope: src/**/*.ts
+Goal: Find reliability issues
+
+# Quick security scan
+/autoresearch:predict --depth shallow --chain security
+Scope: src/api/**
+
+# Deep analysis with adversarial debate
+/autoresearch:predict --depth deep --adversarial
+Goal: Pre-deployment quality audit
+
+# CI/CD gate
+/autoresearch:predict --fail-on critical --budget 0.50
+Scope: src/**
+Iterations: 1
+
+# Chain to debug for hypothesis-driven investigation
+/autoresearch:predict --chain debug
+Scope: src/auth/**
+Goal: Investigate intermittent 500 errors
+
+# Multi-chain: predict → scenario → debug → fix (sequential pipeline)
+/autoresearch:predict --chain scenario,debug,fix
+Scope: src/**
+Goal: Full quality pipeline for new feature
+```
+
 ### /autoresearch:plan — Goal → Configuration Wizard
 
 Converts a plain-language goal into a validated, ready-to-execute autoresearch configuration.
@@ -211,7 +366,7 @@ After the wizard completes, the user gets a ready-to-paste `/autoresearch` invoc
 
 ## When to Activate
 
-- User invokes `/autoresearch` or `/ug:autoresearch` → run the loop
+- User invokes `/autoresearch` → run the loop
 - User invokes `/autoresearch:plan` → run the planning wizard
 - User invokes `/autoresearch:security` → run the security audit
 - User says "help me set up autoresearch", "plan an autoresearch run" → run the planning wizard
@@ -222,6 +377,10 @@ After the wizard completes, the user gets a ready-to-paste `/autoresearch` invoc
 - User says "find all bugs", "hunt bugs", "debug this", "why is this failing", "investigate" → run the debug loop
 - User invokes `/autoresearch:fix` → run the fix loop
 - User says "fix all errors", "make tests pass", "fix the build", "clean up errors" → run the fix loop
+- User invokes `/autoresearch:scenario` → run the scenario loop
+- User says "explore scenarios", "generate use cases", "what could go wrong", "stress test this feature", "edge cases for" → run the scenario loop
+- User invokes `/autoresearch:predict` → run the predict workflow
+- User says "predict", "multi-perspective", "swarm analysis", "what do multiple experts think", "analyze from different angles" → run the predict workflow
 - User says "work autonomously", "iterate until done", "keep improving", "run overnight" → run the loop
 - Any task requiring repeated iteration cycles with measurable outcomes → run the loop
 
@@ -258,7 +417,7 @@ After N iterations Claude stops and prints a final summary with baseline → cur
 
 **If the user provides Goal, Scope, Metric, and Verify inline** → extract them and proceed to step 5.
 
-**If any critical field is missing** → use `AskUserQuestion` to collect them interactively:
+**CRITICAL: If ANY critical field is missing (Goal, Scope, Metric, Direction, or Verify), you MUST use `AskUserQuestion` to collect them interactively. DO NOT proceed to The Loop or any execution phase without completing this setup. This is a BLOCKING prerequisite.**
 
 ### Interactive Setup (when invoked without full config)
 
@@ -285,7 +444,7 @@ Use a SINGLE `AskUserQuestion` call with these 4 questions:
 
 **After Batch 2:** Dry-run the verify command. If it fails, ask user to fix or choose a different command. If it passes, proceed with launch choice.
 
-**IMPORTANT:** Always batch questions — never ask one at a time. Users should see all config choices together for full context.
+**IMPORTANT:** You MUST call `AskUserQuestion` with batched questions — never ask one at a time, and never skip this step. Users should see all config choices together for full context. DO NOT proceed to Setup Steps or The Loop without completing interactive setup.
 
 ### Setup Steps (after config is complete)
 
@@ -331,7 +490,7 @@ LOOP (FOREVER or N times):
 4. **Mechanical verification only** — No subjective "looks good". Use metrics
 5. **Automatic rollback** — Failed changes revert instantly. No debates
 6. **Simplicity wins** — Equal results + less code = KEEP. Tiny improvement + ugly complexity = DISCARD
-7. **Git is memory** — Every kept change committed. Agent reads history to learn patterns
+7. **Git is memory** — Every experiment committed with `experiment:` prefix. Use `git revert` (not `git reset --hard`) for rollbacks so failed experiments remain visible in history. Agent MUST read `git log` and `git diff` of kept commits to learn patterns before each iteration
 8. **When stuck, think harder** — Re-read files, re-read goal, combine near-misses, try radical changes. Don't ask for help unless truly blocked by missing access/permissions
 
 ## Principles Reference
@@ -352,5 +511,8 @@ See `references/core-principles.md` for the 7 generalizable principles from auto
 | Shipping | Checklist pass rate (%) | Any artifact | `/autoresearch:ship` | Domain-specific |
 | Debugging | Bugs found + coverage | Target files | `/autoresearch:debug` | — |
 | Fixing | Error count (lower) | Target files | `/autoresearch:fix` | `npm test` |
+| Scenario analysis | Scenario coverage score (higher) | Feature/domain files | `/autoresearch:scenario` | — |
+| Scenarios | Use cases + edge cases + dimension coverage | Target feature/files | `/autoresearch:scenario` | — |
+| Prediction | Findings + hypotheses (higher) | Target files | `/autoresearch:predict` | — |
 
 Adapt the loop to your domain. The PRINCIPLES are universal; the METRICS are domain-specific.

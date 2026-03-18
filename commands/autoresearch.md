@@ -1,18 +1,31 @@
 ---
 name: autoresearch
 description: Autonomous Goal-directed Iteration. Modify, verify, keep/discard, repeat. Apply to ANY task with a measurable metric.
-argument-hint: "[Goal: <text>] [Scope: <glob>] [Metric: <text>] [Verify: <cmd>]"
+argument-hint: "[Goal: <text>] [Scope: <glob>] [Metric: <text>] [Verify: <cmd>] [Guard: <cmd>] [--iterations N]"
 ---
 
-Load and follow the autoresearch autonomous loop protocol.
+EXECUTE IMMEDIATELY — do not deliberate, do not ask clarifying questions before reading the protocol.
 
-1. Read the skill file: `skills/autoresearch/SKILL.md` — understand the full framework, setup phase, and critical rules
-2. Read the core principles: `skills/autoresearch/references/core-principles.md`
-3. Read the autonomous loop protocol: `skills/autoresearch/references/autonomous-loop-protocol.md`
-4. Read the results logging format: `skills/autoresearch/references/results-logging.md`
-5. Parse any inline config from the user's arguments: $ARGUMENTS
-6. If Goal, Scope, Metric, and Verify are all provided — extract them and proceed to setup step 5
-7. If any critical field is missing — run the interactive setup with batched `AskUserQuestion` calls as defined in SKILL.md
-8. Execute the autonomous loop: Modify → Verify → Keep/Discard → Repeat
+## Argument Parsing (do this FIRST, before reading any files)
 
-Follow the protocol exactly. One atomic change per iteration. Mechanical verification only. Auto-rollback on failure.
+Extract these from $ARGUMENTS — the user may provide extensive context alongside config. Ignore prose and extract ONLY structured fields:
+
+- `Goal:` — text after "Goal:" keyword
+- `Scope:` or `--scope <glob>` — file globs after "Scope:" keyword
+- `Metric:` — text after "Metric:" keyword
+- `Verify:` — shell command after "Verify:" keyword
+- `Guard:` — shell command after "Guard:" keyword (optional)
+- `Iterations:` or `--iterations` — integer N for bounded mode (CRITICAL: if set, you MUST run exactly N iterations then stop)
+
+If `Iterations: N` or `--iterations N` is found, set `max_iterations = N`. Track `current_iteration` starting at 0. After iteration N, print final summary and STOP.
+
+## Execution
+
+1. Read the autonomous loop protocol: `.claude/skills/autoresearch/references/autonomous-loop-protocol.md`
+2. Read the results logging format: `.claude/skills/autoresearch/references/results-logging.md`
+3. If Goal, Scope, Metric, and Verify are all extracted — proceed directly to loop setup
+4. If any critical field is missing — use `AskUserQuestion` with batched questions as defined in SKILL.md "Interactive Setup" section
+5. Execute the autonomous loop: Modify → Verify → Keep/Discard → Repeat
+6. If bounded: after each iteration, check `current_iteration < max_iterations`. If not, STOP and print summary.
+
+IMPORTANT: Start executing immediately. Stream all output live — never run in background. Never stop early unless goal achieved or max_iterations reached.

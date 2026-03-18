@@ -1,14 +1,31 @@
 ---
 name: autoresearch:fix
 description: Autonomous fix loop — iteratively repairs errors until zero remain. One fix per iteration, atomic, auto-reverted on failure.
-argument-hint: "[--target <cmd>] [--guard <cmd>] [--scope <glob>] [--category <type>] [--from-debug]"
+argument-hint: "[--target <cmd>] [--guard <cmd>] [--scope <glob>] [--category <type>] [--from-debug] [--iterations N]"
 ---
 
-Load and follow the autoresearch fix workflow protocol.
+EXECUTE IMMEDIATELY — do not deliberate, do not ask clarifying questions before reading the protocol.
 
-1. Read the skill file: `.claude/skills/autoresearch/SKILL.md` — understand the overall autoresearch framework
-2. Read the fix workflow reference: `.claude/skills/autoresearch/references/fix-workflow.md` — this is the FULL protocol to follow
-3. Parse any flags from the user's arguments: $ARGUMENTS
-4. Execute the 8-phase fix loop as defined in `fix-workflow.md`
+## Argument Parsing (do this FIRST)
 
-Follow the fix workflow protocol exactly. ONE fix per iteration. Never suppress errors. Fix implementation, not tests. Auto-revert on regression.
+Extract these from $ARGUMENTS — the user may provide extensive context alongside flags. Ignore prose and extract ONLY flags/config:
+
+- `--target <cmd>` or `Target:` — explicit verify command
+- `--guard <cmd>` or `Guard:` — safety command that must always pass
+- `--scope <glob>` or `Scope:` — file globs to fix
+- `--category <type>` — only fix: test, type, lint, or build
+- `--from-debug` — read findings from latest debug session
+- `Iterations:` or `--iterations N` — integer for bounded mode (CRITICAL: run exactly N iterations then stop)
+
+If `Iterations: N` or `--iterations N` is found, set `max_iterations = N`. Track `current_iteration` starting at 0. After iteration N, print final summary and STOP. Also stops when error count = 0.
+
+All remaining text in $ARGUMENTS is additional context — use it to understand the problem but do not treat it as flags.
+
+## Execution
+
+1. Read the fix workflow: `.claude/skills/autoresearch/references/fix-workflow.md`
+2. If target and scope are missing — use `AskUserQuestion` with batched questions per fix-workflow.md
+3. Execute the 8-phase fix loop: ONE fix per iteration, never suppress errors, auto-revert on regression
+4. If bounded: after each iteration, check `current_iteration < max_iterations`. If not, STOP and print summary.
+
+Stream all output live — never run in background.

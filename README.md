@@ -7,7 +7,7 @@
 Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) — constraint + mechanical metric + autonomous iteration = compounding gains.
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blue?logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
-[![Version](https://img.shields.io/badge/version-1.6.2-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
+[![Version](https://img.shields.io/badge/version-1.7.3-blue.svg)](https://github.com/uditgoenka/autoresearch/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Based on](https://img.shields.io/badge/Based_on-Karpathy's_Autoresearch-orange)](https://github.com/karpathy/autoresearch)
 [![Follow @iuditg](https://img.shields.io/badge/Follow-@iuditg-000000?style=flat&logo=x&logoColor=white)](https://x.com/intent/follow?screen_name=iuditg)
@@ -20,7 +20,7 @@ Based on [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) —
 
 <br>
 
-[How It Works](#how-it-works) · [Commands](#commands) · [Quick Start](#quick-start) · [Guide](GUIDE.md) · [Examples](EXAMPLES.md) · [FAQ](#faq)
+[How It Works](#how-it-works) · [Commands](#commands) · [Quick Start](#quick-start) · [Guides](guide/) · [FAQ](#faq)
 
 </div>
 
@@ -87,6 +87,7 @@ Before looping, Claude performs a one-time setup:
 | `/autoresearch:debug` | Autonomous bug-hunting loop — scientific method + iterative investigation |
 | `/autoresearch:fix` | Autonomous fix loop — iteratively repair errors until zero remain |
 | `/autoresearch:scenario` | Scenario-driven use case generator — explore situations, edge cases, derivative scenarios |
+| `/autoresearch:predict` | Multi-persona prediction | Pre-analyze code from 5 expert perspectives before acting |
 | `Guard: <command>` | Optional safety net — must pass for changes to be kept |
 
 **All commands use `AskUserQuestion` for interactive setup when invoked without arguments.** Just type the command — Claude will ask you what you need step by step with smart defaults based on your codebase. Power users can skip the wizard by providing flags inline.
@@ -107,6 +108,8 @@ Before looping, Claude performs a one-time setup:
 | Explore edge cases for a feature | `/autoresearch:scenario` |
 | Generate test scenarios | `/autoresearch:scenario --domain software --format test-scenarios` |
 | Stress test a user journey | `/autoresearch:scenario --depth deep` |
+| I want expert opinions before I start | `/autoresearch:predict` |
+| Analyze this from multiple angles | `/autoresearch:predict --chain debug` |
 
 ---
 
@@ -122,7 +125,14 @@ In Claude Code, run:
 /plugin install autoresearch@autoresearch
 ```
 
-That's it. All 6 commands are available after running `/reload-plugins` or restarting Claude Code.
+That's it. All 8 commands are available after running `/reload-plugins` or restarting Claude Code.
+
+**Updating (no reinstall needed):**
+```
+/plugin update autoresearch
+```
+
+That pulls the latest version. Run `/reload-plugins` to activate. No need to uninstall or re-clone.
 
 **Option B — Manual copy:**
 ```bash
@@ -264,6 +274,18 @@ Takes a broken state and iteratively repairs it until everything passes. ONE fix
 
 ---
 
+## /autoresearch:predict — Multi-Persona Prediction (v1.7.0)
+
+Before you debug, fix, or ship — get 5 expert perspectives in 2 minutes.
+
+`/autoresearch:predict` simulates a team of experts (Architect, Security Analyst, Performance Engineer, Reliability Engineer, Devil's Advocate) who independently analyze your code, debate findings, and reach consensus. Chain the output directly to any other command:
+
+- `/autoresearch:predict --chain debug` — pre-ranked hypotheses before debugging
+- `/autoresearch:predict --chain security` — multi-persona red team analysis
+- `/autoresearch:predict --chain scenario,debug,fix` — full quality pipeline
+
+---
+
 ## /autoresearch:scenario — Scenario Explorer (v1.6.0)
 
 Autonomous scenario exploration engine. Takes a seed scenario and iteratively generates situations across 12 dimensions — happy paths, errors, edge cases, abuse, scale, concurrency, temporal, data variation, permissions, integrations, recovery, and state transitions.
@@ -343,8 +365,20 @@ Every 10 iterations, Claude prints a progress summary. Bounded loops print a fin
 ```
 autoresearch/
 ├── README.md
-├── GUIDE.md                                       ← Complete guide — installation to advanced chains
-├── EXAMPLES.md                                    ← Real-world examples by domain
+├── guide/                                         ← Comprehensive guides — one per command + advanced patterns
+│   ├── README.md                                  ← Guide index
+│   ├── getting-started.md                         ← Installation, core concepts, FAQ
+│   ├── autoresearch.md                            ← The autonomous loop
+│   ├── autoresearch-plan.md                       ← Setup wizard
+│   ├── autoresearch-debug.md                      ← Bug hunter
+│   ├── autoresearch-fix.md                        ← Error crusher
+│   ├── autoresearch-security.md                   ← Security auditor
+│   ├── autoresearch-ship.md                       ← Shipping workflow
+│   ├── autoresearch-scenario.md                   ← Scenario explorer
+│   ├── autoresearch-predict.md                    ← Multi-persona swarm prediction
+│   ├── chains-and-combinations.md                 ← Multi-command pipelines
+│   ├── examples-by-domain.md                      ← Real-world examples by domain
+│   └── advanced-patterns.md                       ← Guards, MCP, CI/CD, FAQ
 ├── LICENSE
 ├── .claude-plugin/
 │   ├── marketplace.json                           ← Plugin marketplace manifest
@@ -356,7 +390,8 @@ autoresearch/
 │       ├── security.md                            ← /autoresearch:security registration
 │       ├── debug.md                               ← /autoresearch:debug registration
 │       ├── fix.md                                 ← /autoresearch:fix registration
-│       └── scenario.md                            ← /autoresearch:scenario registration
+│       ├── scenario.md                            ← /autoresearch:scenario registration
+│       └── predict.md                             ← /autoresearch:predict registration
 └── skills/
     └── autoresearch/
         ├── SKILL.md                               ← Main skill (loaded by Claude Code)
@@ -369,6 +404,7 @@ autoresearch/
             ├── debug-workflow.md                  ← Debug loop protocol
             ├── fix-workflow.md                    ← Fix loop protocol
             ├── scenario-workflow.md               ← Scenario exploration protocol
+            ├── predict-workflow.md                ← Multi-persona swarm prediction workflow
             └── results-logging.md                 ← TSV tracking format
 ```
 
@@ -386,13 +422,13 @@ A: Yes. Any language, framework, or domain. Copy the skill to `.claude/skills/au
 A: `Ctrl+C` or add `Iterations: N` to your inline config to run exactly N iterations. Claude commits before verifying, so your last successful state is always in git.
 
 **Q: Can I use this for non-code tasks?**
-A: Absolutely. Sales emails, marketing copy, HR policies, runbooks — anything with a measurable metric. See [EXAMPLES.md](EXAMPLES.md).
+A: Absolutely. Sales emails, marketing copy, HR policies, runbooks — anything with a measurable metric. See [Examples by Domain](guide/examples-by-domain.md).
 
 **Q: Does /autoresearch:security modify my code?**
 A: No. It's read-only — analyzes code and produces a structured report. Use `--fix` to opt into auto-remediation of confirmed Critical/High findings.
 
 **Q: Can I use MCP servers?**
-A: Yes. Any MCP server configured in Claude Code is available during the loop for database queries, API calls, analytics, etc. See [EXAMPLES.md](EXAMPLES.md#combining-with-mcp-servers).
+A: Yes. Any MCP server configured in Claude Code is available during the loop for database queries, API calls, analytics, etc. See [Advanced Patterns](guide/advanced-patterns.md#using-with-mcp-servers).
 
 ---
 
@@ -400,7 +436,7 @@ A: Yes. Any MCP server configured in Claude Code is available during the loop fo
 
 Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Areas of interest: new domain examples, verification script templates, CI/CD integrations, real-world benchmarks.
+Areas of interest: new domain examples, verification script templates, CI/CD integrations, real-world benchmarks. All guides are in the [guide/](guide/) folder.
 
 ---
 
@@ -409,8 +445,8 @@ Areas of interest: new domain examples, verification script templates, CI/CD int
 <a href="https://www.star-history.com/?repos=uditgoenka%2Fautoresearch&type=timeline&legend=top-left">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=uditgoenka/autoresearch&type=timeline&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=uditgoenka/autoresearch&type=timeline&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=uditgoenka/autoresearch&type=timeline&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=uditgoenka/autoresearch&type=timeline&legend=top-left&v=20260318" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=uditgoenka/autoresearch&type=timeline&legend=top-left&v=20260318" />
  </picture>
 </a>
 

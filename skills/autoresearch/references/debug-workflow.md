@@ -26,13 +26,15 @@ Scope: src/api/**/*.ts
 Symptom: API returns 500 on POST /users
 ```
 
-## Interactive Setup (when invoked without flags)
+## PREREQUISITE: Interactive Setup (when invoked without flags)
 
-If `/autoresearch:debug` is invoked without `--scope` or `--symptom`, use `AskUserQuestion` to gather full context in ONE batched call before investigating. Scan the codebase first (run tests, lint, typecheck) to detect existing failures and provide smart defaults.
+**CRITICAL — BLOCKING PREREQUISITE:** If `/autoresearch:debug` is invoked without `--scope` or `--symptom`, you MUST use `AskUserQuestion` to gather full context BEFORE proceeding to ANY phase. DO NOT skip this step. DO NOT jump to Phase 1 without completing interactive setup.
+
+Scan the codebase first (run tests, lint, typecheck) to detect existing failures and provide smart defaults.
 
 **Single batched call — all 4 questions at once:**
 
-Use ONE `AskUserQuestion` call with all 4 questions:
+You MUST call `AskUserQuestion` with all 4 questions in ONE call:
 
 | # | Header | Question | Options (from codebase scan) |
 |---|--------|----------|------------------------------|
@@ -59,6 +61,8 @@ If `--scope`, `--symptom`, or `--fix` flags are provided, skip the interactive s
 ```
 
 ## Phase 1: Gather — Symptoms & Context
+
+**STOP: Have you completed the Interactive Setup above?** If invoked without `--scope`/`--symptom` flags, you MUST complete the `AskUserQuestion` call above BEFORE entering this phase.
 
 Collect everything known about the problem before investigating.
 
@@ -462,4 +466,4 @@ Iterations: 15
 Iterations: 20
 ```
 
-When `--fix` is specified, after the debug loop completes, automatically switches to `/autoresearch:fix` targeting the discovered issues.
+When `--fix` is specified, after the debug loop completes, automatically switches to `/autoresearch:fix --from-debug` targeting the discovered issues. The `--from-debug` flag tells fix to read findings from the latest debug session.

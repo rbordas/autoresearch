@@ -13,7 +13,7 @@ Convert a textual goal into a validated, ready-to-execute autoresearch configura
 
 ### Phase 1: Capture Goal
 
-If no goal provided, ask:
+**CRITICAL — BLOCKING PREREQUISITE:** If no goal is provided inline, you MUST use `AskUserQuestion` to capture it. DO NOT skip this step or proceed to Phase 2 without a goal.
 
 ```
 AskUserQuestion:

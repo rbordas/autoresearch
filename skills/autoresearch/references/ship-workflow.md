@@ -28,13 +28,13 @@ Target: src/features/auth/**
 Destination: production
 ```
 
-## Interactive Setup (when invoked without flags)
+## PREREQUISITE: Interactive Setup (when invoked without flags)
 
-If `/autoresearch:ship` is invoked without `--type` or target, scan for staged changes, open PRs, and recent commits, then use `AskUserQuestion` with ALL questions batched.
+**CRITICAL — BLOCKING PREREQUISITE:** If `/autoresearch:ship` is invoked without `--type` or target, you MUST scan for staged changes, open PRs, and recent commits, then use `AskUserQuestion` to gather user input BEFORE proceeding to ANY phase. DO NOT skip this step.
 
 **Single batched call — all 3 questions at once:**
 
-Use ONE `AskUserQuestion` call with all 3 questions:
+You MUST call `AskUserQuestion` with all 3 questions in ONE call:
 
 | # | Header | Question | Options (from context scan) |
 |---|--------|----------|----------------------------|

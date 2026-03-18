@@ -21,19 +21,23 @@
 ## What the Script Does
 
 ```
-[1/6] Create release branch (release/X.Y.Z)
-[2/6] Bump versions:
+[1/7] Create release branch (release/X.Y.Z)
+[2/7] Bump versions:
       → .claude-plugin/plugin.json       (version field)
       → .claude-plugin/marketplace.json  (version fields — top-level + plugins array)
       → README.md                        (version badge)
-      → GUIDE.md                         (version badge)
-[3/6] Pause for doc review:
+      → guide/README.md                  (version badge)
+[3/7] Sync distribution files:
+      → Copies .claude/commands/autoresearch/ → commands/autoresearch/
+      → Copies .claude/skills/autoresearch/  → skills/autoresearch/
+      → Ensures root distribution matches .claude/ source of truth
+[4/7] Pause for doc review:
       → Shows changelog since last tag
-      → Prompts you to review README.md, GUIDE.md, EXAMPLES.md, CONTRIBUTING.md
+      → Prompts you to review README.md, guide/, CONTRIBUTING.md
       → You can edit in another terminal, then continue
-[4/6] Commit all release changes
-[5/6] Push branch + create PR against master
-[6/6] Wait for your "merge" confirmation:
+[5/7] Commit all release changes
+[6/7] Push branch + create PR against master
+[7/7] Wait for your "merge" confirmation:
       → Merges PR
       → Tags the merge commit
       → Creates GitHub release with auto-generated notes
@@ -50,7 +54,7 @@ Before running the script, verify:
 
 ## Doc Review Guide
 
-At step [3/6], the script pauses and shows the changelog. Review these files:
+At step [4/7], the script pauses and shows the changelog. Review these files:
 
 ### README.md
 - **Version badge** (auto-updated by script)
@@ -59,18 +63,12 @@ At step [3/6], the script pauses and shows the changelog. Review these files:
 - **Repository Structure** — new files in the tree?
 - **FAQ** — new questions from issues/discussions?
 
-### GUIDE.md
-- **Version badge** (must match release version)
-- **Command Reference** — any new commands or flags?
-- **Domain Scenarios** — new domain examples to add?
-- **Command Chains** — new chain patterns possible?
-- **Metric Cheat Sheet** — new verify commands to add?
-
-### EXAMPLES.md
-- **Version tags in headers** — e.g., `(v1.7.0)` for new features
-- **New command examples** — did you add a new `/autoresearch:*` command?
-- **New domain examples** — any real-world examples to add?
-- **Flag documentation** — new flags for existing commands?
+### guide/
+- **guide/README.md** — version badge (auto-updated by script)
+- **Individual command guides** — any new commands or flags?
+- **guide/examples-by-domain.md** — new domain examples to add?
+- **guide/chains-and-combinations.md** — new chain patterns possible?
+- **guide/advanced-patterns.md** — new verify commands, MCP patterns, FAQ?
 
 ### CONTRIBUTING.md
 - **Repository Structure** — does the tree reflect new files?
@@ -81,7 +79,22 @@ At step [3/6], the script pauses and shows the changelog. Review these files:
 ### Tips
 - Edit docs in another terminal while the script is paused
 - Type `skip` at the prompt to continue without doc changes
-- The script stages any doc changes automatically (README.md, GUIDE.md, EXAMPLES.md, CONTRIBUTING.md)
+- The script stages any doc changes automatically (README.md, guide/, CONTRIBUTING.md)
+
+## Distribution Sync
+
+The root `commands/` and `skills/autoresearch/` directories are the **distribution source** — what users copy when manually installing. The `.claude/` versions are the development source of truth.
+
+**Before every release**, the script syncs root from `.claude/`:
+```bash
+# What the sync step does:
+cp .claude/commands/autoresearch.md commands/autoresearch.md
+cp .claude/commands/autoresearch/*.md commands/autoresearch/
+cp .claude/skills/autoresearch/SKILL.md skills/autoresearch/SKILL.md
+cp .claude/skills/autoresearch/references/*.md skills/autoresearch/references/
+```
+
+If you add a new subcommand during development, it goes into `.claude/` first. The release script ensures root stays in sync.
 
 ## Abort and Resume
 

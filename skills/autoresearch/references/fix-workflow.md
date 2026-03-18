@@ -27,15 +27,15 @@ Scope: src/**/*.ts
 Guard: npm run typecheck
 ```
 
-## Interactive Setup (when invoked without flags)
+## PREREQUISITE: Interactive Setup (when invoked without flags)
 
-If `/autoresearch:fix` is invoked without explicit `--target`, `--guard`, or `--scope`, first auto-detect all failures (run tests, typecheck, lint, build), then use `AskUserQuestion` with ALL questions batched in a single call.
+**CRITICAL — BLOCKING PREREQUISITE:** If `/autoresearch:fix` is invoked without explicit `--target`, `--guard`, or `--scope`, you MUST first auto-detect all failures, then use `AskUserQuestion` to gather user input BEFORE proceeding to ANY phase. DO NOT skip this step. DO NOT jump to Phase 1 without completing interactive setup.
 
 **Pre-scan:** Run test suite, type checker, linter, and build to detect failures. Present summary in the first question.
 
 **Single batched call — all 4 questions at once:**
 
-Use ONE `AskUserQuestion` call with all 4 questions:
+You MUST call `AskUserQuestion` with all 4 questions in ONE call:
 
 | # | Header | Question | Options (from auto-detection) |
 |---|--------|----------|-------------------------------|
@@ -63,6 +63,8 @@ If the user provides `--target`, `--guard`, `--scope`, or `--from-debug` flags, 
 ```
 
 ## Phase 1: Detect — What's Broken?
+
+**STOP: Have you completed the Interactive Setup above?** If invoked without `--target`/`--guard`/`--scope` flags, you MUST complete the `AskUserQuestion` call above BEFORE entering this phase.
 
 Auto-detect the failure domain from context, or accept explicit target.
 
@@ -169,7 +171,7 @@ Pick the highest-priority unfixed item and make ONE focused change.
 ## Phase 4: Commit — Before Verification
 
 ```bash
-git add -A
+git add <modified-files>
 git commit -m "fix: [what was fixed] — [file:line]"
 ```
 

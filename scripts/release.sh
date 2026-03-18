@@ -66,6 +66,12 @@ fi
 
 git pull origin master --quiet
 
+# Check if tag already exists
+if git tag -l "$TAG" | grep -q "$TAG"; then
+  echo "Error: Tag $TAG already exists. Choose a different version."
+  exit 1
+fi
+
 # Read current version
 CURRENT=$(grep -o '"version": "[^"]*"' "$PLUGIN_JSON" | cut -d'"' -f4)
 echo ""
@@ -77,11 +83,11 @@ echo "  Branch:          $BRANCH"
 echo ""
 
 # --- Create release branch ---
-echo "[1/6] Creating release branch: $BRANCH"
+echo "[1/7] Creating release branch: $BRANCH"
 git checkout -b "$BRANCH"
 
 # --- Bump version in plugin.json and marketplace.json ---
-echo "[2/6] Bumping versions: $CURRENT → $VERSION"
+echo "[2/7] Bumping versions: $CURRENT → $VERSION"
 for JSON_FILE in "$PLUGIN_JSON" "$MARKETPLACE_JSON"; do
   if [[ -f "$JSON_FILE" ]]; then
     echo "    Updating $JSON_FILE"
@@ -93,8 +99,19 @@ for JSON_FILE in "$PLUGIN_JSON" "$MARKETPLACE_JSON"; do
   fi
 done
 
-# --- Bump version badges in README.md and GUIDE.md ---
-for DOC_FILE in README.md GUIDE.md; do
+# --- Bump version in SKILL.md frontmatter ---
+SKILL_FILE=".claude/skills/autoresearch/SKILL.md"
+if [[ -f "$SKILL_FILE" ]] && grep -q "^version:" "$SKILL_FILE"; then
+  echo "    Updating $SKILL_FILE"
+  if [[ "$(uname)" == "Darwin" ]]; then
+    sed -i '' "s/^version: .*/version: $VERSION/" "$SKILL_FILE"
+  else
+    sed -i "s/^version: .*/version: $VERSION/" "$SKILL_FILE"
+  fi
+fi
+
+# --- Bump version badges in README.md and guide/README.md ---
+for DOC_FILE in README.md guide/README.md; do
   if [[ -f "$DOC_FILE" ]] && grep -q "version-.*-blue" "$DOC_FILE"; then
     echo "    Updating version badge in $DOC_FILE"
     if [[ "$(uname)" == "Darwin" ]]; then
@@ -105,15 +122,28 @@ for DOC_FILE in README.md GUIDE.md; do
   fi
 done
 
+# --- Sync distribution files from .claude/ ---
+echo ""
+echo "[3/7] Syncing distribution files from .claude/"
+if [[ -d ".claude/commands/autoresearch" ]]; then
+  cp .claude/commands/autoresearch.md commands/autoresearch.md 2>/dev/null || true
+  cp .claude/commands/autoresearch/*.md commands/autoresearch/
+  echo "    Synced commands/autoresearch/"
+fi
+if [[ -d ".claude/skills/autoresearch" ]]; then
+  cp .claude/skills/autoresearch/SKILL.md skills/autoresearch/SKILL.md
+  cp .claude/skills/autoresearch/references/*.md skills/autoresearch/references/
+  echo "    Synced skills/autoresearch/"
+fi
+
 # --- Doc review prompt ---
 echo ""
-echo "[3/6] Documentation review"
+echo "[4/7] Documentation review"
 echo "────────────────────────────────────────"
 echo "  Before continuing, review these files for accuracy:"
 echo ""
 echo "  README.md        — version refs, command table, feature descriptions"
-echo "  GUIDE.md         — version badge, command reference, domain scenarios, chains"
-echo "  EXAMPLES.md      — version tags in headers, new command examples"
+echo "  guide/           — individual command guides, examples, advanced patterns"
 echo "  CONTRIBUTING.md  — repo structure, file table, sub-command steps"
 echo ""
 
@@ -132,15 +162,15 @@ read -rp "  Press ENTER when docs are ready (or 'skip' to continue as-is): " DOC
 
 if [[ "$DOC_RESPONSE" != "skip" ]]; then
   # Check if README or EXAMPLES were modified
-  if [[ -n "$(git status --porcelain -- README.md GUIDE.md EXAMPLES.md CONTRIBUTING.md)" ]]; then
+  if [[ -n "$(git status --porcelain -- README.md guide/ CONTRIBUTING.md)" ]]; then
     echo "    Staging doc updates..."
-    git add README.md GUIDE.md EXAMPLES.md CONTRIBUTING.md 2>/dev/null || true
+    git add README.md guide/ CONTRIBUTING.md 2>/dev/null || true
   fi
 fi
 
 # --- Commit all release changes ---
 echo ""
-echo "[4/6] Committing release changes"
+echo "[5/7] Committing release changes"
 git add -A
 if git diff --cached --quiet; then
   echo "    No changes to commit."
@@ -150,7 +180,7 @@ fi
 
 # --- Push branch and create PR ---
 echo ""
-echo "[5/6] Pushing branch and creating PR"
+echo "[6/7] Pushing branch and creating PR"
 git push -u origin "$BRANCH"
 
 # Build PR body with changelog
@@ -180,10 +210,9 @@ ${CHANGELOG:-"No previous tag found — initial release."}
 - [x] plugin.json version bumped to $VERSION
 - [x] marketplace.json version bumped to $VERSION
 - [x] README.md version badge updated
-- [x] GUIDE.md version badge updated
+- [x] guide/README.md version badge updated
 - [ ] README.md content reviewed for accuracy
-- [ ] GUIDE.md reviewed — command reference, domains, chains
-- [ ] EXAMPLES.md reviewed — new commands/features documented
+- [ ] guide/ reviewed — command guides, examples, chains
 - [ ] CONTRIBUTING.md reviewed — repo structure, file table
 - [ ] All tests passing
 
@@ -197,7 +226,7 @@ echo "  PR created: $PR_URL"
 echo ""
 
 # --- Wait for merge confirmation ---
-echo "[6/6] Waiting for merge confirmation"
+echo "[7/7] Waiting for merge confirmation"
 echo "────────────────────────────────────────"
 echo "  Review the PR: $PR_URL"
 echo ""

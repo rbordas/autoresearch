@@ -28,13 +28,13 @@ Scope: src/api/**/*.ts, src/middleware/**/*.ts
 Focus: authentication and authorization flows
 ```
 
-## Interactive Setup (when invoked without flags)
+## PREREQUISITE: Interactive Setup (when invoked without flags)
 
-If `/autoresearch:security` is invoked without `--diff`, scope, or focus, scan the codebase first (detect tech stack, API routes, auth patterns), then use `AskUserQuestion` with ALL questions batched.
+**CRITICAL — BLOCKING PREREQUISITE:** If `/autoresearch:security` is invoked without `--diff`, scope, or focus, you MUST scan the codebase first, then use `AskUserQuestion` to gather user input BEFORE proceeding to ANY phase. DO NOT skip this step.
 
 **Single batched call — all 3 questions at once:**
 
-Use ONE `AskUserQuestion` call with all 3 questions:
+You MUST call `AskUserQuestion` with all 3 questions in ONE call:
 
 | # | Header | Question | Options (from codebase scan) |
 |---|--------|----------|------------------------------|
@@ -585,7 +585,7 @@ claude -p "/autoresearch:security --fail-on critical --iterations 10"
 # Exit code 1 if any Critical findings → blocks the pipeline
 ```
 
-### `--fix` — Auto-Remediation Mode (v1.0.3)
+### `--fix` — Auto-Remediation Mode
 
 After completing the audit, switches to standard autoresearch modify→verify loop to fix confirmed findings. Uses the security audit report as its goal.
 
@@ -600,11 +600,11 @@ Iterations: 10
 
 1. Run the full security audit (setup + loop + report)
 2. Filter findings: only **Confirmed** severity **Critical** and **High**
-3. Switch to standard autoresearch loop:
-   - **Goal:** Fix all confirmed Critical and High findings
+3. Switch to `/autoresearch:fix` with findings context:
+   - **Target:** Re-run the security checks that found each vulnerability
    - **Scope:** Files referenced in findings (file:line locations)
-   - **Metric:** Count of remaining confirmed findings (lower is better)
-   - **Verify:** Re-run the security checks that found each vulnerability
+   - Pass the filtered findings list as context so fix knows WHAT to fix
+   - Fix picks highest-severity unfixed finding each iteration
 4. For each fix iteration:
    - Pick the highest-severity unfixed finding
    - Apply the mitigation from `recommendations.md`
@@ -694,6 +694,8 @@ jobs:
         run: |
           git clone https://github.com/uditgoenka/autoresearch.git /tmp/autoresearch
           cp -r /tmp/autoresearch/skills/autoresearch .claude/skills/autoresearch
+          cp -r /tmp/autoresearch/commands/autoresearch .claude/commands/autoresearch
+          cp /tmp/autoresearch/commands/autoresearch.md .claude/commands/autoresearch.md
 
       - name: Run Security Audit
         env:

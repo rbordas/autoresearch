@@ -23,7 +23,7 @@ git rev-parse --git-dir 2>/dev/null || echo "FAIL: not a git repo"
 # 2. Check for dirty working tree
 git status --porcelain
 # → If dirty: warn user and ask to stash or commit first
-#   NEVER proceed with uncommitted user changes — git add -A will stage them
+#   NEVER proceed with uncommitted user changes — explicit git add will stage them
 
 # 3. Check for stale lock files
 ls .git/index.lock 2>/dev/null && echo "WARN: stale lock"
@@ -103,8 +103,10 @@ Pick the NEXT change. **MUST consult git history and results log before deciding
 **You MUST commit before running verification.** This enables clean rollback if the experiment fails.
 
 ```bash
-# Stage ALL modified in-scope files
-git add -A
+# Stage ONLY in-scope files (safer than git add -A)
+# List the specific files you modified and add them individually:
+git add <file1> <file2> ...
+# AVOID git add -A — it stages ALL files including .env, node_modules, and user's unrelated work
 
 # Check if there's actually something to commit
 git diff --cached --quiet
@@ -112,14 +114,14 @@ git diff --cached --quiet
 # → If exit code 1 (changes exist): proceed with commit
 
 # Commit with descriptive experiment message
-git commit -m "experiment: <one-sentence description of what you changed and why>"
+git commit -m "experiment(<scope>): <one-sentence description of what you changed and why>"
 ```
 
-**"Nothing to commit" handling:** If `git add -A` followed by `git diff --cached --quiet` shows no changes, the modification phase produced no actual diff. This is NOT a crash — log as `status=no-op` with description of what was attempted, skip verification, and proceed to next iteration. Do NOT create an empty commit.
+**"Nothing to commit" handling:** If `git add <files>` followed by `git diff --cached --quiet` shows no changes, the modification phase produced no actual diff. This is NOT a crash — log as `status=no-op` with description of what was attempted, skip verification, and proceed to next iteration. Do NOT create an empty commit.
 
-**WARNING about `git add -A`:** This stages ALL changes in the repo, including files outside the in-scope set. Before committing, run `git diff --cached --name-only` and verify that only in-scope files are staged. If unexpected files appear, unstage them with `git reset HEAD <file>` before committing.
+**WARNING:** NEVER use `git add -A` — it stages ALL files including .env, credentials, and user's unrelated work. Always use `git add <file1> <file2> ...` with explicit file paths. After staging, verify with `git diff --cached --name-only` that only in-scope files are staged.
 
-**Commit message format:** Always prefix with `experiment:` so the git log clearly shows the autoresearch iteration history. Include WHAT was changed and the HYPOTHESIS (e.g., "experiment: increase timeout from 5s to 30s — hypothesis: reduces flaky test failures").
+**Commit message format:** Use conventional commit format with `experiment` type: `experiment(<scope>): <description>`. This keeps compatibility with commit-lint while clearly marking autoresearch iterations. Example: `experiment(auth): increase timeout from 5s to 30s — hypothesis: reduces flaky test failures`.
 
 **Hook failure handling:** If a pre-commit hook blocks the commit:
 1. Read the hook's error output to understand WHY it blocked
@@ -198,7 +200,7 @@ ELIF metric_improved AND guard_failed:
     # Rework the optimization (max 2 attempts)
     FOR attempt IN 1..2:
         Analyze guard output → rework implementation (NOT tests)
-        git add -A && git commit -m "experiment: rework — <description>"
+        git add <modified-files> && git commit -m "experiment(<scope>): rework — <description>"
         Re-run verify
         IF metric_improved:
             Re-run guard
