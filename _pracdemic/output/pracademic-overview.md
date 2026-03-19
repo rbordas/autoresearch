@@ -24,13 +24,27 @@ The pracademic is distinct from the *scholar-practitioner* (primarily an academi
 
 The concept of the pracademic emerged gradually through the late 20th century as business schools began confronting a growing gap between what academic research produced and what organizations actually needed.
 
+### How the Term Started
+
+The word *pracademic* is a portmanteau — a deliberate fusion of *practitioner* and *academic* — that arose independently in several fields before gaining traction in management education. Its earliest documented uses appear in **public administration literature** in the early 1990s, where practitioners pursuing doctoral degrees while maintaining government or NGO roles found no adequate vocabulary for their hybrid identities.
+
+The conceptual roots trace further back:
+- **1981**: Eugene Meehan's work on the "policy intellectual" in public administration literature articulated the tension between scholarly rigor and practical relevance
+- **Late 1980s**: The *Academy of Management* began debating "relevance versus rigor" in business research, a debate that would shape the pracademic's eventual institutional home
+- **1994**: A landmark *Business Week* cover story declared that MBA programs had "lost touch" with business reality — the article is widely cited as the trigger for AACSB's first relevance-focused accreditation reforms
+
+The **first formal academic treatment of the pracademic identity** as a distinct professional category appeared in public administration journals in the late 1990s. Scholars like David Boud and Nancy Falchikov, writing on professional learning and practice-based research, helped establish the theoretical foundations. The term migrated into management education through the early 2000s as business schools began hiring executives into faculty roles and needed language for this new category.
+
+Key figures who shaped the concept's legitimacy:
+- **Henry Mintzberg** (McGill University): His 2004 book *Managers Not MBAs* articulated the crisis of pure-theory management education and implicitly described the pracademic's value proposition
+- **Roger Martin** (Rotman School): As dean, formalized the integrative thinking model that blends academic rigor with business practice, creating institutional infrastructure for pracademic faculty
+- **Warren Bennis and James O'Toole**: Their 2005 *Harvard Business Review* article "How Business Schools Lost Their Way" made the relevance crisis mainstream and accelerated demand for practice-oriented faculty
+
 ### Early Roots (1980s–2000s)
 
-The term itself has been traced to various independent coinages, but its institutionalization accelerated in the late 1990s and 2000s when AACSB — the global accreditor for business schools — began formalizing faculty qualification categories. The creation of the **Practice Academic (PA)** and **Scholarly Practitioner (SP)** classifications acknowledged, for the first time in accreditation standards, that industry experience could substitute for or supplement traditional scholarly credentials.
+The institutionalization of the pracademic model accelerated in the late 1990s and 2000s when AACSB began formalizing faculty qualification categories. The creation of the **Practice Academic (PA)** and **Scholarly Practitioner (SP)** classifications acknowledged, for the first time in accreditation standards, that industry experience could substitute for or supplement traditional scholarly credentials.
 
-The earliest scholarly articulations appeared in public administration and policy literature, where practitioners who entered PhD programs while maintaining government or NGO careers found no adequate label for their hybrid identity. Eugene Meehan's 1981 work on the "policy intellectual" and subsequent debates in public administration journals laid conceptual groundwork.
-
-In business education, the critique of the pure-scholar model accelerated after a landmark 1994 *Business Week* cover story declared that MBA programs had "lost touch" with business reality. The Association to Advance Collegiate Schools of Business (AACSB) responded with a series of mission-linked accreditation reforms that gave formal legitimacy to practitioners in faculty roles.
+In business education, the critique of the pure-scholar model accelerated after the 1994 *Business Week* story. The Association to Advance Collegiate Schools of Business (AACSB) responded with a series of mission-linked accreditation reforms that gave formal legitimacy to practitioners in faculty roles.
 
 ### Formalization (2010s)
 
@@ -40,6 +54,23 @@ The 2010s saw the pracademic model gain institutional infrastructure:
 - **Development in Practice** (a leading applied social science journal) began publishing research *by* pracademics rather than merely *about* them
 - **Harvard Business School** and **Stanford GSB** formalized senior lecturer and professor of practice tracks with explicit practitioner-credential pathways
 - The term entered management education vocabulary through AACSB's Bridge to Practice initiative, which explicitly celebrated the pracademic model as a solution to the relevance gap
+- **Journal of Management Education** published multiple special issues on practice-based learning and the practitioner-scholar identity, building a peer-reviewed body of literature on the model
+
+### Key Milestones Timeline
+
+| Year | Milestone |
+|---|---|
+| 1981 | Meehan's "policy intellectual" concept lays groundwork in public administration |
+| 1994 | *Business Week* "lost touch" cover story triggers AACSB relevance reforms |
+| 2000 | AACSB formalizes PA and SP faculty qualification categories |
+| 2004 | Mintzberg's *Managers Not MBAs* validates practice-based management education |
+| 2005 | Bennis & O'Toole "How Business Schools Lost Their Way" in HBR |
+| 2010s | Springer publishes pracademic identity monograph series |
+| 2014 | AACSB Bridge to Practice initiative formally launched |
+| 2020 | Remote work accelerates geographic barrier removal for dual-role careers |
+| 2025 | *Nature* profiles McKinsey partner/associate professor as model for future of knowledge work |
+| 2025 | *Development in Practice* special issue: "Pracademics as Change Agents" |
+| 2026 | AACSB Global Standards (effective) further expand PA/SP pathways |
 
 ### Current Institutional Status (2020s–Present)
 

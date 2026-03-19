@@ -1,3 +1,4 @@
 iteration	action	word_count	delta	decision	description
 0	baseline	0	0	keep	Empty output directory — baseline established
 1	create	1947	+1947	keep	Created pracademic-overview.md — definition, origins, six forces, US/FL market outlook
+2	create	3795	+1848	keep	Created career-opportunities.md — all 4 career tracks, compensation tables, consulting platforms
