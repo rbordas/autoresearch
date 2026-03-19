@@ -318,6 +318,58 @@ This stack positions René uniquely for advisory boards, fractional CIO work, ex
 
 ---
 
+## Publication Strategy and Thought Leadership
+
+Publishing is not optional for this career trajectory — it is the mechanism that maintains AACSB SA status, differentiates the profile from pure operators, and builds the portable reputation that no single employer can take away. The goal is not to publish in top-tier academic journals (a multi-year, uncertain path) but to build a consistent presence across *bridge journals* that practicing executives actually read.
+
+### Why Bridge Journals Are the Right Target
+
+Bridge journals sit between pure academic research and trade publications. They reach practicing executives, earn academic credibility, and build a portable reputation. For a profile combining deep industry expertise with doctoral research rigor, they are the highest-impact publication outlet per hour invested.
+
+HBR evaluates submissions on five criteria: expertise, evidence, originality, practical applicability, and accessible writing. Notably, HBR explicitly states it understands that practitioner research often deals with novel or emerging issues where large datasets don't exist — they want insights grounded in practitioners' lived experiences. René's 25 years of enterprise IT leadership provides exactly that foundation.
+
+### Publication Pipeline
+
+| Outlet | Type | Article Concept | Timeline | Status |
+|---|---|---|---|---|
+| Target academic journal | Peer-reviewed | Dissertation-to-journal article (with Chris) | Q2 2026 | In progress |
+| HBR.org | Digital article | "What Running IT on a Cruise Ship Teaches You About Disconnected Operations" | Q3 2026 | To pitch |
+| Cornell Hospitality Quarterly | Practitioner | Digital transformation challenges unique to maritime hospitality IT | Q3–Q4 2026 | To pitch |
+| MIT Sloan Mgmt. Review | Framework | IT governance framework for disconnected/remote-site operations | Q4 2026 | To pitch |
+| Hospitality Upgrade | Industry | Emerging tech adoption aboard cruise vessels | Q1 2027 | To pitch |
+| LinkedIn Articles | Thought leadership | 1/month across all three content pillars | Ongoing | Start now |
+
+### The Two Strongest HBR Pitches
+
+**Concept A: "What Running IT on a Cruise Ship Teaches You About Disconnected Operations"**
+Cruise ships operate critical IT infrastructure with intermittent satellite connectivity, multi-jurisdictional regulatory compliance, and a captive user population. The operational lessons transfer directly to any organization managing edge computing, remote-site IT, or disaster-resilient infrastructure. This is a genuinely novel problem that HBR's audience hasn't encountered — and René is one of very few people globally who can write it with operational authority.
+
+**Concept B: "The PhD You Don't Expect: What Happens When a 25-Year IT Executive Goes Back to School"**
+A personal narrative about what academic research revealed that decades of industry experience missed — and vice versa. Fits HBR's appetite for counterintuitive insights and personal authority. Directly positions the pracademic identity for a large executive readership. *How to submit*: HBR's Submittable portal at harvardbusinessreview.submittable.com; start with HBR.org (digital) rather than the print magazine — faster editorial cycle, more accessible entry point.
+
+### Three Content Pillars for Thought Leadership
+
+All LinkedIn articles, conference presentations, expert network positioning, and publication pitches should organize around three interconnected pillars:
+
+**Pillar 1: Maritime and Cruise Line IT Operations**
+Shipboard IT infrastructure challenges, disconnected-site operations, maritime regulatory compliance (ILO, SOLAS), IoT and safety systems aboard vessels. Highest-differentiation pillar — virtually no one is writing about this with both insider operational knowledge and doctoral-level analysis. Every article here is defensible territory.
+
+**Pillar 2: Enterprise IT Operations Leadership**
+IT governance, service management, ITIL/TOGAF frameworks, global IT team management, vendor management, digital transformation leadership. Connects to the broader IT executive audience and positions for fractional CIO/CDO work and professor of practice applications in IS/IT Management.
+
+**Pillar 3: The Pracademic Identity**
+Bridging academic research and industry practice, what MBA students need to know about IT operations that textbooks miss, the value of the industry PhD, reflections on teaching graduate students while leading enterprise IT. Builds academic brand, supports faculty applications, and resonates with the growing pracademic community.
+
+### LinkedIn Posting Cadence
+
+- **2 short posts/week** (15–20 min each): industry commentary, teaching reflections, research-to-practice insights
+- **1 long-form article/month** (800–1,200 words): deeper analysis on one of the three pillars
+- **Daily engagement** (5–10 min): thoughtful comments on posts by department chairs, hospitality CIOs, and industry analysts — this drives connection growth more efficiently than posts alone
+
+**90-day LinkedIn targets**: 500+ new targeted connections, 10K+ impressions/month, 2–3 inbound inquiries (speaking, consulting, advisory board interest)
+
+---
+
 ## Near-Term Strategy: Keep Oracle, Build the Side Hustle
 
 The portfolio career does not require leaving Oracle. The optimal near-term strategy is to compound assets without burning bridges — using Oracle's W-2 income and benefits as the financial foundation while building the consulting brand, publication record, and academic network that will support the full portfolio transition.
