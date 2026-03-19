@@ -316,4 +316,69 @@ This stack positions René uniquely for advisory boards, fractional CIO work, ex
 
 ---
 
+---
+
+## Near-Term Strategy: Keep Oracle, Build the Side Hustle
+
+The portfolio career does not require leaving Oracle. The optimal near-term strategy is to compound assets without burning bridges — using Oracle's W-2 income and benefits as the financial foundation while building the consulting brand, publication record, and academic network that will support the full portfolio transition.
+
+### The Core Principle
+
+Oracle provides income, institutional credibility, and technical currency. FAU provides academic affiliation and AACSB SA status. The consulting LLC captures the upside of scarce expertise. Each component reinforces the others — and the side hustle built now is the infrastructure for the full portfolio career later, whether that transition happens in 2027 or 2030.
+
+### LLC Setup (Month 1 Action Items)
+
+1. **Register a Florida LLC** on Sunbiz.org — $125 filing fee, same-day processing
+2. **Obtain an EIN** from the IRS — free, online, instant
+3. **Open a business checking account** separate from personal accounts
+4. **Elect S-corp status** (Form 2553) once consulting income exceeds $40K–$50K annually — saves self-employment tax on distributions
+5. **Brand around vendor-neutral expertise**: digital transformation strategy, IT operations governance, enterprise architecture advisory, executive education. Do not reference Oracle or SPMS in any marketing while employed.
+6. **File Oracle disclosure** for both the FAU adjunct role and the consulting LLC if Oracle's Code of Ethics requires it — transparency protects
+
+### Oracle Conflict-of-Interest Boundaries
+
+**While employed at Oracle, consulting must NOT:**
+- Advise cruise lines or hospitality companies on Oracle SPMS implementations, configurations, or migrations (direct conflict with Oracle's business)
+- Recommend competing PMS products to Oracle customers or prospects
+- Use any Oracle proprietary information, internal documentation, or customer data
+- Solicit Oracle employees or customers for the consulting business
+
+**Cleanly permitted while at Oracle:**
+- Vendor-neutral digital transformation strategy consulting
+- IT governance, ITIL, and enterprise architecture advisory (especially with TOGAF certification)
+- Executive education workshops on general IT operations management topics
+- Expert network calls (GLG, Guidepoint) sharing general industry knowledge — not Oracle proprietary information
+- Teaching graduate courses at FAU on IT management and operations
+- Publishing in academic and practitioner journals
+- Speaking at industry conferences on general digital transformation topics
+
+**After leaving Oracle:** Non-compete constraints lift (subject to any post-employment restrictive covenants), and the full cruise line SPMS and Oracle Hospitality operational expertise becomes available for consulting. This is when the consulting business reaches its highest value. The side hustle infrastructure built now — brand, client pipeline, publication record, credentials — is ready to scale immediately.
+
+### Near-Term Revenue Streams (Ranked by Speed to First Dollar)
+
+**Stream 1: Expert Network Calls (Week 1–2)**
+Register on GLG, Guidepoint, AlphaSights, and Tegus. These platforms connect with PE firms, consulting firms, and investors paying $300–$800/hour for 30–60 minute calls on cruise line IT operations, hospitality technology trends, and enterprise IT governance. Low time commitment, zero Oracle conflict, highest hourly rate available near-term.
+
+**Stream 2: Executive Education Workshops (Month 2–3)**
+Weekend or PTO workshops: "IT Governance Frameworks for Hospitality," "Digital Transformation Strategy for Operations Leaders," "Enterprise Architecture Fundamentals." Target HFTP, CLIA, AHLA, and university executive education programs. Rate: $5K–$15K per session.
+
+**Stream 3: Advisory Board Seats (Month 3–6)**
+Hospitality technology startups and South Florida tech companies value a PhD-holding enterprise IT leader on their advisory board. Typically $5K–$20K annually in equity or cash, minimal time (quarterly meetings), and expands the network for future consulting referrals.
+
+**Stream 4: Vendor-Neutral Consulting (Month 6+)**
+Once LLC is established and expert network calls generate referrals: IT strategy assessments, enterprise architecture reviews, and digital transformation roadmaps for mid-market companies. Rate: $200–$400/hour. Keep strictly vendor-neutral while at Oracle.
+
+### Income Growth Trajectory (Side Hustle While at Oracle)
+
+| Year | Side Hustle Income | Primary Sources | Oracle Status |
+|---|---|---|---|
+| Year 1 (Now–2027) | $20K–$40K | Expert network, 1–2 workshops, advisory board | Full-time W-2 |
+| Year 2 (2027–2028) | $50K–$100K | Consulting pipeline, speaking, publications | Full-time W-2 |
+| Year 3+ (2028+) | $100K–$200K+ | Full consulting portfolio, cruise SPMS expertise unlocked | W-2 or transition |
+
+**Total combined (Year 1):** Oracle W-2 + adjunct + side hustle = well above $200K with growing trajectory
+**Total combined (Year 3+):** If Oracle W-2 ends — portfolio career already operational at $300K–$500K+ run rate
+
+---
+
 *See also: [Pracademic Overview →](pracademic-overview.md)*
