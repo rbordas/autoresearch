@@ -5,6 +5,23 @@
 
 ---
 
+## Executive Summary
+
+René Bordés occupies a genuinely rare market position: 25+ years of Oracle Hospitality global operations leadership, a 2024 PhD in Business Administration from FAU, active R1 adjunct teaching, and bilingual German/English fluency — based in Fort Lauderdale at the center of the Miami–Orlando hospitality technology corridor.
+
+**The optimal strategy is a portfolio career** anchored by a full-time professor of practice or clinical professor appointment, supplemented by consulting, advisory boards, and thought leadership. Income potential: **$300K–$500K+ annually**.
+
+**Four career tracks are available simultaneously:**
+
+1. **Academic** — Professor of Practice / Clinical Professor at AACSB-accredited business school ($120K–$220K base). The 2024 PhD provides SA status through ~2029; Florida's H-1B freeze creates near-term openings at FIU, UCF, and USF. Apply now.
+2. **Consulting** — Fractional CIO/CDO ($10K–$20K/month per client), OPERA Cloud advisory ($200–$400/hr), executive education ($5K–$15K/session). The cruise SPMS expertise is globally scarce and commands premium pricing.
+3. **Industry Executive** — CIO/CDO ($250K–$400K base), Chief AI Officer ($354K average, 40% of CAIOs hold PhDs), VP Digital Transformation ($170K–$250K).
+4. **Keep Oracle + Build Side Hustle** — Expert network calls (GLG, Guidepoint) are permissible now at $300–$800/hr, LLC registration takes one day, and the consulting pipeline can reach $50K–$100K/year by Year 2 without leaving Oracle.
+
+**Single most important near-term action:** Apply to 5–10 professor of practice openings immediately. The academic anchor provides the institutional platform, AACSB SA status, income stability, and byline credibility from which all other income streams compound.
+
+---
+
 ## Profile Summary
 
 **René Bordés** occupies a genuinely rare market position:

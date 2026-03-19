@@ -4,6 +4,21 @@
 
 ---
 
+## Executive Summary
+
+The **pracademic** — a professional who holds simultaneous senior roles in both industry and academia — has moved from career curiosity to institutionally recognized, structurally demanded professional identity. Six converging forces (the AACSB relevance crisis, digital transformation talent shortage, AI leadership explosion, pracademic model legitimization, remote work normalization, and above-average BLS occupational growth) are creating unprecedented demand for people who combine deep industry expertise with doctoral credentials and teaching capability.
+
+**Key figures:**
+- 73% of all U.S. faculty positions are now off the tenure track; business schools lead this shift
+- AACSB's forthcoming 2026 Global Standards further expand practice-oriented faculty pathways
+- Chief AI Officer appointments doubled from 11% to 26% of organizations in two years; 40% of CAIOs hold PhDs
+- Portfolio career potential: $300K–$500K+ annually combining academic anchor + consulting + advisory + speaking
+- SA status window for a 2024 PhD: open through ~2029 — the window of maximum AACSB value
+
+**For a profile combining Oracle Hospitality global director experience, a 2024 PhD, and R1 adjunct teaching in South Florida**: the SA status window, Florida's H-1B freeze at public universities, and the global scarcity of cruise SPMS expertise combine to make 2026 the optimal year to pursue a professor of practice appointment while launching consulting infrastructure in parallel.
+
+---
+
 ## What Is a Pracademic?
 
 A **pracademic** is a professional who simultaneously holds senior roles in both industry and academia — not as a moonlighter or occasional guest lecturer, but as someone whose identity, credibility, and career capital span both worlds with equal weight. The term blends *practitioner* and *academic*, and it describes a person who brings the rigor of scholarly research to practical problems while grounding academic work in real operational experience.
