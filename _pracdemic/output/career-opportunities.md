@@ -184,6 +184,67 @@ Washington, DC remains the number-one market for IT/cybersecurity careers by emp
 
 ---
 
+## The Portfolio Career Model: Combining All Tracks
+
+The highest-income and highest-optionality strategy is not to choose one track but to combine them in a structured portfolio, anchored by a full-time professor of practice position and supplemented by consulting, advisory, and thought leadership income streams.
+
+### Why the Academic Anchor Matters
+
+The professor of practice role is not just income — it is the institutional platform from which all other streams flow:
+
+- **AACSB SA Status**: A PhD completed in 2024 provides Scholarly Academic classification through approximately 2029, making René maximally valuable for accreditation compliance — the most constrained faculty category
+- **Dual byline**: "René Bordés, Ph.D., Oracle Hospitality & Florida Atlantic University" carries weight in publishing, speaking, and consulting that neither credential alone commands
+- **Income stability**: A 9–10 month contract with benefits provides reliable base income while summers remain free for consulting, executive education, and research
+- **Future option value**: Full-time faculty status keeps the door open to internal promotion, research grants, and department leadership — paths that adjunct status forecloses
+- **3–5× pay increase**: From adjunct (~$4,093/course national average) to professor of practice ($120K–$175K) for the same teaching load
+
+### Recommended Portfolio Allocation
+
+| Component | Time Allocation | Income Range | Priority |
+|---|---|---|---|
+| Professor of Practice (anchor) | 50–60% (9–10 mo.) | $120K–$175K | **Critical** |
+| Consulting & Fractional Work | 20–30% | $50K–$150K+ | **High** |
+| Executive Education | 10–15% (summer) | $20K–$60K | **High** |
+| Advisory Boards (2–3 seats) | 5–10% | $20K–$80K | **Medium** |
+| Speaking & Writing | ~5% | $10K–$50K | **Medium** |
+| **Total Potential** | | **$300K–$500K+** | |
+
+### Portfolio Income Scenarios
+
+**Conservative (Year 1–2 of transition)**
+- Professor of Practice at Public R1: $130K
+- 2 expert network calls/month (GLG, Guidepoint): $10K–$15K/yr
+- 1 advisory board seat: $10K/yr
+- Total: ~$150K–$155K (stable, predictable, low stress)
+
+**Moderate (Year 2–3)**
+- Professor of Practice: $140K
+- 1 consulting retainer (fractional CIO, 1 day/week): $80K/yr
+- 2 advisory board seats: $25K/yr
+- 2 executive education workshops: $20K/yr
+- Total: ~$265K
+
+**Optimized (Year 3–5)**
+- Professor of Practice or Clinical Professor: $160K
+- 2 consulting retainers: $150K–$200K/yr
+- 3 advisory board seats: $40K–$60K/yr
+- Executive education program: $40K–$60K/yr
+- Speaking (3–5 keynotes): $25K–$50K/yr
+- Total: **$415K–$530K/yr**
+
+### Why the Portfolio Model Wins vs. Single-Track
+
+| Scenario | Income | Optionality | Risk |
+|---|---|---|---|
+| Full-time Oracle only | ~$200K–$250K (est.) | Low — single employer dependency | High — layoff risk |
+| Full-time Professor of Practice only | $130K–$175K | Medium — academic tenure alternative | Low — stable |
+| Industry exec (CIO/CDO) only | $300K–$500K | Medium — market dependent | Medium |
+| Portfolio (anchor + consulting) | $300K–$500K+ | **High** — multiple independent streams | **Low** — diversified |
+
+The portfolio model produces income comparable to a CIO/CDO while providing the resilience of an academic role, the brand-building of thought leadership, and the upside of consulting. If Oracle employment ends unexpectedly, the portfolio is already operational — not a plan to execute under pressure.
+
+---
+
 ## The Highest-Value Niche: Cruise Line Shipboard IT Operations
 
 Among all the dimensions of this profile, the cruise line shipboard IT operations expertise is the single most globally scarce asset — and the one that commands the highest consulting premium once Oracle employment constraints lift.
