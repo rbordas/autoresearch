@@ -182,4 +182,77 @@ Washington, DC remains the number-one market for IT/cybersecurity careers by emp
 
 ---
 
+---
+
+## The Highest-Value Niche: Cruise Line Shipboard IT Operations
+
+Among all the dimensions of this profile, the cruise line shipboard IT operations expertise is the single most globally scarce asset — and the one that commands the highest consulting premium once Oracle employment constraints lift.
+
+### What Makes It Rare
+
+Oracle Hospitality Cruise **Shipboard Property Management System (SPMS)** is the central data hub for virtually every aspect of hospitality operations aboard a vessel:
+
+- **Guest and crew profile management**: onboard identification cards (magnetic stripe, barcode, RFID) and gangway security
+- **Mobile mustering and safety compliance**: muster lists, safety drill scheduling, ILO Maritime Labour Convention violation tracking
+- **Point-of-sale integration**: Simphony shipboard POS, spa management, shore excursion booking
+- **Crew time and attendance**: ILO Maritime Labour Convention compliance across multi-flag vessels
+- **Multi-currency cash management**: credit card settlement via Oracle Payment Interface
+- **Fleet Management System integration**: shoreside KPI monitoring and real-time data transfer
+- **On-premises N-tier architecture**: Oracle Database on shipboard servers with Windows infrastructure, operating under intermittent satellite connectivity
+
+This is not hotel software. It is enterprise IT infrastructure operating under maritime regulatory requirements, with a captive user population, physical security constraints, and connectivity conditions that no cloud-first architect has ever managed. The skills transfer to any organization managing edge computing, remote-site IT, or disaster-resilient infrastructure — but the practitioners who understand the full system at an operational level are countable on two hands globally.
+
+### The Pricing Power
+
+The rarity equation: (deep OPERA SPMS operational knowledge) × (25+ years enterprise IT leadership) × (PhD in Business Administration) × (active graduate-level teaching) = a globally defensible niche.
+
+- **Expert network calls** (GLG, Guidepoint, AlphaSights): $300–$800/hour for 30–60 minute calls from PE firms, consulting firms, and investors evaluating hospitality technology acquisitions
+- **After Oracle**: Full consulting capability unlocked — SPMS implementation advisory, cruise line IT transformation, and technology assessment at rates of $200–$400/hour
+- **Speaking and keynotes**: Conference presentations at HITEC, HFTP Annual Convention, CLIA Technology Summit — $5K–$20K per keynote on cruise IT operations, maritime digital transformation, or AI in hospitality
+- **Publication premium**: Cornell Hospitality Quarterly and Hospitality Upgrade actively seek authors with insider operational knowledge; a peer-reviewed article on maritime hospitality IT opens academic doors that pure researchers cannot access
+
+### The Book Opportunity
+
+The combination of operational depth + PhD research training + graduate teaching experience positions René uniquely for a practitioner-scholar book on a topic virtually no one can write with authority:
+
+- **"Running IT on a Cruise Ship"** — The operational, regulatory, and organizational challenges of managing enterprise IT on a moving vessel, with lessons for edge computing, disconnected operations, and global IT governance
+- **Target publishers**: Wiley, Apress (technology focus), or university presses with hospitality management series
+- **Audience**: IT executives managing distributed/remote-site operations, hospitality technology practitioners, maritime industry professionals
+- **Academic utility**: A book substantially advances the case for promotion to associate/full clinical professor and creates ongoing thought leadership inventory
+
+---
+
+## The Credential Stack: Recommended Additions
+
+The existing credential base (PhD + 25 years Oracle + R1 adjunct) is strong. Two targeted additions would create a triple signal that is genuinely rare in the market:
+
+### TOGAF 10 EA Practitioner (Recommended: Q2–Q3 2026)
+- **What it is**: The Open Group Architecture Framework — the global standard for enterprise architecture, recognized by 900+ member organizations
+- **Why it fits**: Vendor-neutral (no Oracle conflict), signals strategic enterprise architecture thinking, differentiates from both pure academics and pure operators
+- **Timeline**: TOGAF 10 Foundation (~3–4 weeks study, ~$400 exam) → TOGAF 10 Practitioner (~4–6 weeks, ~$400 exam + ~$1,099 training)
+- **Total investment**: ~$1,500–$2,000 all-in
+- **ROI**: Unlocks enterprise architecture advisory work at $200–$400/hour; strengthens professor of practice applications at schools with IS/IT Management programs
+
+### OCI Architect Professional (While at Oracle, Q3–Q4 2026)
+- **What it is**: Oracle Cloud Infrastructure Architect certification — directly relevant to Oracle Hospitality's cloud migration work
+- **Why it fits**: Oracle likely provides internal training and exam vouchers; no conflict; deepens expertise in the employer's platform
+- **After Oracle**: Supplement with AWS Solutions Architect Professional or Azure Solutions Architect Expert to broaden vendor-neutral credentials
+
+### The Full Credential Stack
+
+| Credential | Type | Status | Signal |
+|---|---|---|---|
+| PhD in Business Administration | Degree | Completed 2024 | Research rigor, analytical depth, academic credibility |
+| FAU MS in IT Management | Degree | Completed 2020 | Technical IT management foundation |
+| FAU MBA | Degree | Completed 2019 | Business strategy and organizational leadership |
+| AI Bootcamp | Certificate | Completed 2020 | Current AI/ML fluency |
+| Big Data Analytics Grad. Cert. | Certificate | Completed 2019 | Data science and analytics |
+| Harvard Negotiation Program | Certificate | Completed 2018 | Executive-level negotiation skills |
+| TOGAF 10 EA Practitioner | Certification | Recommended 2026 | Enterprise architecture, vendor-neutral strategy |
+| OCI Architect Professional | Certification | Recommended 2026 | Cloud platform technical fluency |
+
+This stack positions René uniquely for advisory boards, fractional CIO work, expert network calls, and professor of practice applications — differentiating from both pure academics (who lack certifications) and pure practitioners (who lack the PhD and teaching record).
+
+---
+
 *See also: [Pracademic Overview →](pracademic-overview.md)*
