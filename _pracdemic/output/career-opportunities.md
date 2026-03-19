@@ -433,4 +433,99 @@ Once LLC is established and expert network calls generate referrals: IT strategy
 
 ---
 
+---
+
+## 90-Day Action Plan
+
+The following plan converts strategy into a sequenced, time-bounded set of actions. Three parallel tracks run simultaneously: academic job search, consulting infrastructure, and thought leadership. Each phase builds on the previous.
+
+### Phase 1: Foundation (Days 1–30)
+*Theme: Secure the anchor, activate the brand*
+
+**Academic Job Search**
+1. Create accounts on HigherEdJobs, Chronicle Vitae, AIS Academic Careers (academiccareers.aisnet.org), and INFORMS Career Center. Set alerts for: professor of practice, clinical professor, teaching professor, and lecturer in IS, IT Management, Business Analytics, and Digital Transformation.
+2. Prepare a dedicated academic cover letter template emphasizing three differentiators: (a) 25+ years of enterprise IT leadership at Oracle Hospitality, (b) PhD in Business Administration completed 2024, (c) demonstrated teaching effectiveness with MBA and MS graduate students at R1 university.
+3. Request updated teaching evaluations from FAU Executive Education. Compile teaching portfolio: syllabi, sample assignments, student feedback, course development examples.
+4. Identify and apply to 5–10 current openings. Priority: Tulane (Professor of Practice in IT, start June 2026), UMBC (Assistant Teaching Professor in IS, Fall 2026), Texas State (Asst. Prof. of Practice in ISA).
+5. Contact department chairs at FIU (IS and Business Analytics) and UCF Rosen College to inquire about upcoming practice-oriented faculty openings — especially in light of the H-1B freeze.
+
+**Consulting Infrastructure**
+1. Review Oracle employment agreement for outside employment, non-compete, and IP assignment clauses. File disclosure for FAU adjunct and consulting LLC if required.
+2. Register Florida LLC on Sunbiz.org ($125). Obtain EIN. Open business checking account.
+3. Register on GLG, Guidepoint, AlphaSights, and Tegus as expert in cruise line IT operations and hospitality technology. Target: first expert network call within 2 weeks of registration.
+4. Begin TOGAF 10 Foundation self-study (evenings and weekends — 3–4 weeks to exam-ready).
+
+**Thought Leadership**
+1. Rewrite LinkedIn headline: "PhD | Global Director, IT Operations at Oracle Hospitality | Adjunct Instructor, FAU | Enterprise Architecture & Digital Transformation"
+2. Publish first two LinkedIn articles: (a) lessons from managing IT in disconnected/remote environments; (b) what MBA students need to know about IT operations that textbooks miss.
+3. Complete the POLR (Provisional Outline Literature Review) restructured around a single theoretical framework per advisor guidance.
+
+**Phase 1 Success Metrics:** 5+ academic applications submitted, LLC registered, expert network profiles live, 2 LinkedIn articles published, POLR draft complete.
+
+---
+
+### Phase 2: Acceleration (Days 31–60)
+*Theme: Build pipeline, generate first revenue*
+
+**Academic**
+1. Follow up on all Phase 1 applications. If any are progressing, begin preparing teaching demonstrations.
+2. Schedule informational conversations with 3–5 department chairs: FIU, University of Miami, Nova Southeastern, UCF Rosen.
+3. Join AIS (Association for Information Systems) and AACSB Bridge to Practice community.
+
+**Consulting**
+1. Complete first 3–5 expert network calls (target: $900–$4,000 in first revenue).
+2. Pass TOGAF 10 Foundation exam.
+3. Create a one-page consulting services overview for vendor-neutral engagements (digital transformation strategy, IT governance, enterprise architecture advisory).
+4. Register on Toptal or Fortium Partners for fractional CIO/CDO positioning.
+5. Reach out to 3–5 Oracle Hospitality partner ecosystem contacts for potential advisory or consulting referrals (vendor-neutral topics only).
+
+**Thought Leadership**
+1. Submit first draft of journal article to advisor for review.
+2. Submit pitch to Cornell Hospitality Quarterly: "Digital transformation challenges unique to maritime hospitality IT."
+3. Establish weekly LinkedIn posting rhythm: 2 short posts/week + 1 long-form article/month.
+4. Propose a conference presentation at HITEC 2026 (Houston, June) or HFTP Annual Convention.
+5. Join HFTP (Hospitality Financial and Technology Professionals).
+
+**Phase 2 Success Metrics:** First consulting revenue, TOGAF Foundation passed, journal article draft submitted, 3+ informational academic conversations completed, HITEC/HFTP conference proposal submitted.
+
+---
+
+### Phase 3: Conversion (Days 61–90)
+*Theme: Close opportunities, stack credentials*
+
+**Academic**
+1. If academic applications progressing: prepare and deliver teaching demonstrations tailored to each institution.
+2. If offers emerge: evaluate full-time professor of practice vs. continuing Oracle + side hustle based on compensation, location, and timeline.
+3. Propose a new course at FAU: "Digital Transformation in Practice" or "AI Strategy for Operations Leaders" — builds IP usable in consulting and strengthens internal promotion case.
+
+**Consulting**
+1. Begin TOGAF 10 Practitioner study.
+2. Convert at least one consulting lead into a paid engagement: technology assessment, executive workshop, or advisory board seat.
+3. Apply to 2–3 advisory board positions at hospitality technology startups or South Florida tech companies.
+4. Explore OCI Architect Professional training through Oracle internal resources.
+
+**Thought Leadership**
+1. Submit journal article to target journal.
+2. Pitch HBR.org: "What Running IT on a Cruise Ship Teaches You About Disconnected Operations."
+3. Evaluate month-3 LinkedIn analytics: target 500+ new connections, 10K+ impressions/month, 2–3 inbound inquiries.
+4. Begin outlining the book concept ("Running IT on a Cruise Ship" or equivalent) — even a detailed chapter outline is a marketable asset for speaking and publishing credibility.
+
+**Phase 3 Success Metrics:** At least one paid consulting engagement, one advisory board seat, TOGAF Practitioner in progress, HBR pitch submitted, journal article submitted, book outline drafted.
+
+---
+
+### Five Highest-Priority Actions (Start This Week)
+
+| Priority | Action | Track | Expected Outcome |
+|---|---|---|---|
+| 1 | Apply to 5 professor of practice openings | Academic | Pipeline for anchor role; H-1B window is open now |
+| 2 | Register on GLG and Guidepoint | Consulting | First expert network calls within 2 weeks; $300–$800/hr |
+| 3 | Register Florida LLC on Sunbiz.org | Consulting | Legal infrastructure for all future revenue |
+| 4 | Rewrite LinkedIn headline and About section | Brand | Platform for inbound opportunities across all tracks |
+| 5 | Complete POLR restructuring and submit to advisor | Academic | Journal article in pipeline; AACSB SA status maintenance |
+
+*The combination of Oracle Hospitality global leadership, a 2024 PhD, and R1 adjunct teaching is not just competitive — it fills a structural gap that business schools, consulting firms, and technology-driven industries are all actively trying to close.*
+
+---
+
 *See also: [Pracademic Overview →](pracademic-overview.md)*
