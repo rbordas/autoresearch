@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(VERBOSE=1 node scripts/resume-score.js)",
+      "Bash(command -v node)",
+      "Read(//usr/local/bin/**)",
+      "Read(//c/Users/reneb/.nvm/versions/**)",
+      "Read(//c/Program Files/nodejs/**)",
+      "Bash(powershell.exe -Command 'node --version')",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/reneb/**)",
+      "Bash(powershell.exe -Command \"Get-Command node -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source\")",
+      "Bash(powershell.exe -Command \"where.exe node 2>&1\")",
+      "Bash(VERBOSE=1 python scripts/resume-score.py)",
+      "Bash(python scripts/slt-score.py papers/lit-review/literature_review.md)",
+      "Bash(printf \"1\\\\te620d17\\\\t60\\\\t+15.0\\\\t-\\\\tkeep\\\\tlink SLT to Firm Growth summary paragraph\\\\n\")",
+      "Bash(\"c:\\\\Users\\\\reneb\\\\OneDrive\\\\Claude.cowork\\\\projects\\\\autoresearch\\\\autoresearch-slt-results.tsv\")",
+      "WebFetch(domain:www.thedegreedoctor.com)",
+      "Bash(python scripts/POLR-check.py)",
+      "Bash(where pandoc:*)",
+      "Bash(C:UsersrenebAppDataLocalProgramsPythonPython313python.exe -m pip install mammoth)",
+      "Bash(cat _pracdemic/output/*.md)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

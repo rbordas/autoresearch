@@ -422,13 +422,13 @@ A: Yes. Any language, framework, or domain. Copy the skill to `.claude/skills/au
 A: `Ctrl+C` or add `Iterations: N` to your inline config to run exactly N iterations. Claude commits before verifying, so your last successful state is always in git.
 
 **Q: Can I use this for non-code tasks?**
-A: Absolutely. Sales emails, marketing copy, HR policies, runbooks — anything with a measurable metric. See [Examples by Domain](guide/examples-by-domain.md).
+A: Absolutely. Sales emails, marketing copy, HR policies, runbooks — anything with a measurable metric. See [Examples by Domain](examples-by-domain.md).
 
 **Q: Does /autoresearch:security modify my code?**
 A: No. It's read-only — analyzes code and produces a structured report. Use `--fix` to opt into auto-remediation of confirmed Critical/High findings.
 
 **Q: Can I use MCP servers?**
-A: Yes. Any MCP server configured in Claude Code is available during the loop for database queries, API calls, analytics, etc. See [Advanced Patterns](guide/advanced-patterns.md#using-with-mcp-servers).
+A: Yes. Any MCP server configured in Claude Code is available during the loop for database queries, API calls, analytics, etc. See [Advanced Patterns](advanced-patterns.md#using-with-mcp-servers).
 
 ---
 

@@ -770,9 +770,9 @@ If the predict output seems too uniform (all personas agree on everything), the 
 
 ## Related Commands
 
-- [`/autoresearch:debug`](./autoresearch-debug.md) — primary chain target for hypothesis-driven debugging
-- [`/autoresearch:security`](./autoresearch-security.md) — empirical security validation after adversarial predict
-- [`/autoresearch:fix`](./autoresearch-fix.md) — cascade-aware repair using predict's priority queue
-- [`/autoresearch:ship`](./autoresearch-ship.md) — pre-deploy gate with predict's blocker classification
-- [`/autoresearch:scenario`](./autoresearch-scenario.md) — edge case exploration seeded by predict findings
-- [`/autoresearch:plan`](./autoresearch-plan.md) — setup wizard for the base autoresearch loop
+- [`/autoresearch:debug`](autoresearch-debug.md) — primary chain target for hypothesis-driven debugging
+- [`/autoresearch:security`](autoresearch-security.md) — empirical security validation after adversarial predict
+- [`/autoresearch:fix`](autoresearch-fix.md) — cascade-aware repair using predict's priority queue
+- [`/autoresearch:ship`](autoresearch-ship.md) — pre-deploy gate with predict's blocker classification
+- [`/autoresearch:scenario`](autoresearch-scenario.md) — edge case exploration seeded by predict findings
+- [`/autoresearch:plan`](autoresearch-plan.md) — setup wizard for the base autoresearch loop

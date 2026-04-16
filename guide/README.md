@@ -30,7 +30,7 @@ Everything you need to master autonomous iteration — from first run to advance
 | Guide | Description |
 |-------|-------------|
 | [Getting Started](getting-started.md) | Installation, first run, core concepts, 7 principles |
-| [/autoresearch](autoresearch.md) | The core autonomous loop — modify, verify, keep/discard, repeat |
+| [/autoresearch](Claude/Home/Claude-Work/PROJECTS/autoresearch/guide/autoresearch.md) | The core autonomous loop — modify, verify, keep/discard, repeat |
 | [/autoresearch:plan](autoresearch-plan.md) | Interactive wizard — Goal → Scope, Metric, Direction, Verify |
 | [/autoresearch:debug](autoresearch-debug.md) | Autonomous bug-hunting with scientific method |
 | [/autoresearch:fix](autoresearch-fix.md) | Autonomous error crusher — tests, types, lint, build |

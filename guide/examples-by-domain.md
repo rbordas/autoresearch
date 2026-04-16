@@ -1062,4 +1062,4 @@ Verify: node scripts/content-quality-scorer.js content/blog/latest.md
 
 ---
 
-*Related: [chains-and-combinations.md](./chains-and-combinations.md) · [getting-started.md](./getting-started.md) · [autoresearch.md](./autoresearch.md)*
+*Related: [chains-and-combinations.md](chains-and-combinations.md) · [getting-started.md](getting-started.md) · [autoresearch.md](Claude/Home/Claude-Work/PROJECTS/autoresearch/guide/autoresearch.md)*

@@ -1,3 +1,4 @@
+<!-- fullWidth: false tocVisible: false tableWrap: true -->
 # Autoresearch Examples
 
 Real-world examples organized by domain, with practical configurations you can copy-paste.
@@ -720,7 +721,7 @@ Goal: Ensure all literature review sections follow PRISMA checklist
 Scope: papers/lit-review/**/*.md
 Metric: PRISMA checklist compliance % (higher is better)
 Verify: python scripts/prisma-check.py | grep "compliance"
-``````
+```
 
 ```
 /autoresearch
@@ -729,8 +730,37 @@ Goal: Ensure all literature review sections follow POLR (Provisional Outline Lit
 Scope: papers/lit-review/**/*.md
 Metric: POLR (Provisional Outline Literature review) Method compliance % (higher is better)
 Verify: python scripts/POLR-check.py | grep "compliance"
-``````
+```
 
+```
+/autoresearch
+Iterations: 15
+Goal: Create a comprehensive overview of pracademic, and how to build a new carreer around this. 
+Scope: _pracdemic_POLR/input/**/*.md
+Metric: POLR (Provisional Outline Literature review) Method compliance % (higher is better)
+Verify: python scripts/pracdemic-check.py | grep "compliance"
+```
+
+```
+/autoresearch
+Iterations: 15
+Goal: Create a comprehensive overview of pracademic, and how to build a new carreer around this. 
+Scope: _pracademic_Elo/input/**/*.md
+Metric: Elo rating system (Elo_rating_system) Method compliance % (higher is better)
+Verify: python scripts/pracdemic-check.py | grep "compliance"
+```
+
+```
+/autoresearch
+Iterations: 15
+Goal: Create a comprehensive overview of pracademic, and how to build a new carreer around this. 
+Scope: _pracademic_GPQA/input/**/*.md
+Metric: GPQA: A Graduate-Level Google-Proof (higher is better)
+Verify: python scripts/pracdemic-check.py | grep "compliance"
+
+
+
+```
 ### Data analysis report quality
 
 ```
@@ -1129,18 +1159,18 @@ Iterations: 20
 
 ### Chain quick reference
 
-| Chain | When to Use |
-|-------|-------------|
-| `debug → fix` | Bug known, needs finding and fixing |
-| `plan → loop` | Starting new metric improvement |
-| `plan → loop → ship` | Full improvement → deploy cycle |
-| `security → fix → security` | Harden, fix, verify fixes |
-| `scenario → debug → fix` | Edge case discovery → bug hunt → repair |
-| `scenario → security` | Threat modeling from user scenarios |
-| `fix → loop → ship` | Stabilize → improve → deploy |
-| `loop → ship` | Optimization done, time to deploy |
-| `debug → fix → ship` | Production issue: find, fix, deploy |
-| `plan → loop → security → ship` | Full feature lifecycle |
+| Chain                         | When to Use                             |
+| ----------------------------- | --------------------------------------- |
+| `debug → fix`                 | Bug known, needs finding and fixing     |
+| `plan → loop`                 | Starting new metric improvement         |
+| `plan → loop → ship`          | Full improvement → deploy cycle         |
+| `security → fix → security`   | Harden, fix, verify fixes               |
+| `scenario → debug → fix`      | Edge case discovery → bug hunt → repair |
+| `scenario → security`         | Threat modeling from user scenarios     |
+| `fix → loop → ship`           | Stabilize → improve → deploy            |
+| `loop → ship`                 | Optimization done, time to deploy       |
+| `debug → fix → ship`          | Production issue: find, fix, deploy     |
+| `plan → loop → security → ship` | Full feature lifecycle                  |
 
 ---
 
@@ -1276,16 +1306,16 @@ Verify: Use MCP GitHub tool to fetch issues, compare labels against rules
 
 ### Recommended MCP Servers
 
-| MCP Server | Use Case | Metric Source |
-|---|---|---|
-| **PostgreSQL** | Query optimization, data validation | Query execution time, row counts |
-| **GitHub** | Issue triage, PR quality, CI status | Issue counts, check pass rates |
-| **Filesystem** | File organization, cleanup | File counts, directory depth |
-| **Puppeteer/Playwright** | Visual regression, performance | Lighthouse scores, screenshot diffs |
-| **Slack** | Notification quality, alert tuning | Message delivery, response times |
-| **Stripe** | Payment flow optimization | Checkout completion rates |
-| **Sentry** | Error reduction | Error count, crash-free rate |
-| **Cloudflare** | Edge performance | Cache hit rate, TTFB |
+| MCP Server           | Use Case                            | Metric Source                       |
+| -------------------- | ----------------------------------- | ----------------------------------- |
+| **PostgreSQL**       | Query optimization, data validation | Query execution time, row counts    |
+| **GitHub**           | Issue triage, PR quality, CI status | Issue counts, check pass rates      |
+| **Filesystem**       | File organization, cleanup          | File counts, directory depth        |
+| **Puppeteer/Playwright** | Visual regression, performance      | Lighthouse scores, screenshot diffs |
+| **Slack**            | Notification quality, alert tuning  | Message delivery, response times    |
+| **Stripe**           | Payment flow optimization           | Checkout completion rates           |
+| **Sentry**           | Error reduction                     | Error count, crash-free rate        |
+| **Cloudflare**       | Edge performance                    | Cache hit rate, TTFB                |
 
 ---
 
@@ -1545,13 +1575,13 @@ Launch now? → [Unlimited] [Bounded] [Copy only]
 
 ### When to use the plan wizard
 
-| Situation | Recommendation |
-|-----------|----------------|
-| First time using autoresearch | `/autoresearch:plan` — learn the format |
-| Unsure what metric to use | `/autoresearch:plan` — it suggests options |
-| Want to validate before a long run | `/autoresearch:plan` — dry-run confirms it works |
-| Know exactly what you want | `/autoresearch` directly — skip the wizard |
-| Running overnight | `/autoresearch:plan` then launch — confidence before sleep |
+| Situation                          | Recommendation                                           |
+| ---------------------------------- | -------------------------------------------------------- |
+| First time using autoresearch      | `/autoresearch:plan` — learn the format                  |
+| Unsure what metric to use          | `/autoresearch:plan` — it suggests options               |
+| Want to validate before a long run | `/autoresearch:plan` — dry-run confirms it works         |
+| Know exactly what you want         | `/autoresearch` directly — skip the wizard               |
+| Running overnight                  | `/autoresearch:plan` then launch — confidence before sleep |
 
 ---
 
@@ -1613,39 +1643,39 @@ Focus: authentication and authorization flows
 
 ### STRIDE threat model
 
-| Threat | Question | Example Findings |
-|--------|----------|------------------|
-| **S**poofing | Can an attacker impersonate a user/service? | Weak auth, missing CSRF, forged JWTs |
-| **T**ampering | Can data be modified in transit/at rest? | Missing validation, SQL injection |
-| **R**epudiation | Can actions be denied without evidence? | Missing audit logs, unsigned transactions |
-| **I**nfo Disclosure | Can sensitive data leak? | PII in logs, verbose errors, debug endpoints |
-| **D**enial of Service | Can the service be disrupted? | Missing rate limits, regex DoS |
-| **E**levation of Privilege | Can a user gain unauthorized access? | IDOR, broken access control, path traversal |
+| Threat                 | Question                                    | Example Findings                             |
+| ---------------------- | ------------------------------------------- | -------------------------------------------- |
+| **S**poofing           | Can an attacker impersonate a user/service? | Weak auth, missing CSRF, forged JWTs         |
+| **T**ampering          | Can data be modified in transit/at rest?    | Missing validation, SQL injection            |
+| **R**epudiation        | Can actions be denied without evidence?     | Missing audit logs, unsigned transactions    |
+| **I**nfo Disclosure    | Can sensitive data leak?                    | PII in logs, verbose errors, debug endpoints |
+| **D**enial of Service  | Can the service be disrupted?               | Missing rate limits, regex DoS               |
+| **E**levation of Privilege | Can a user gain unauthorized access?        | IDOR, broken access control, path traversal  |
 
 ### OWASP Top 10 coverage
 
 Each iteration targets uncovered OWASP categories:
 
-| ID | Category | Checks |
-|----|----------|--------|
-| A01 | Broken Access Control | IDOR, missing auth middleware, privilege escalation |
-| A02 | Cryptographic Failures | Plaintext secrets, weak hashing, missing encryption |
-| A03 | Injection | SQL/NoSQL/command/XSS/template injection |
-| A04 | Insecure Design | Missing rate limits, race conditions, CSRF gaps |
-| A05 | Security Misconfiguration | Debug mode, default creds, missing headers |
-| A06 | Vulnerable Components | Known CVEs in dependencies |
-| A07 | Auth Failures | JWT flaws, session fixation, weak passwords |
-| A08 | Data Integrity Failures | Unsigned webhooks, insecure deserialization |
-| A09 | Logging Failures | Missing audit logs, sensitive data in logs |
-| A10 | SSRF | Unvalidated URLs, DNS rebinding |
+| ID  | Category                  | Checks                                              |
+| --- | ------------------------- | --------------------------------------------------- |
+| A01 | Broken Access Control     | IDOR, missing auth middleware, privilege escalation |
+| A02 | Cryptographic Failures    | Plaintext secrets, weak hashing, missing encryption |
+| A03 | Injection                 | SQL/NoSQL/command/XSS/template injection            |
+| A04 | Insecure Design           | Missing rate limits, race conditions, CSRF gaps     |
+| A05 | Security Misconfiguration | Debug mode, default creds, missing headers          |
+| A06 | Vulnerable Components     | Known CVEs in dependencies                          |
+| A07 | Auth Failures             | JWT flaws, session fixation, weak passwords         |
+| A08 | Data Integrity Failures   | Unsigned webhooks, insecure deserialization         |
+| A09 | Logging Failures          | Missing audit logs, sensitive data in logs          |
+| A10 | SSRF                      | Unvalidated URLs, DNS rebinding                     |
 
 ### Red-team adversarial lenses
 
-| Persona | Mindset | Focus |
-|---------|---------|-------|
-| **Security Adversary** | "I'm a hacker breaching this system" | Auth bypass, injection, data exposure |
-| **Supply Chain Attacker** | "I'm compromising deps or CI/CD" | CVEs, typosquatting, unsigned artifacts |
-| **Insider Threat** | "I'm a malicious employee" | Privilege escalation, data exfiltration |
+| Persona                 | Mindset                              | Focus                                        |
+| ----------------------- | ------------------------------------ | -------------------------------------------- |
+| **Security Adversary**  | "I'm a hacker breaching this system" | Auth bypass, injection, data exposure        |
+| **Supply Chain Attacker** | "I'm compromising deps or CI/CD"     | CVEs, typosquatting, unsigned artifacts      |
+| **Insider Threat**      | "I'm a malicious employee"           | Privilege escalation, data exfiltration      |
 | **Infrastructure Attacker** | "I'm attacking deployment, not code" | Container escape, exposed services, env vars |
 
 ### Example session output
@@ -1710,10 +1740,10 @@ Higher = more thorough. Max theoretical: 100.
 
 ### Flags
 
-| Flag | Purpose |
-|------|---------|
-| `--diff` | Only audit files changed since last audit (delta mode) |
-| `--fix` | Auto-fix confirmed Critical/High after audit |
+| Flag                 | Purpose                                                 |
+| -------------------- | ------------------------------------------------------- |
+| `--diff`             | Only audit files changed since last audit (delta mode)  |
+| `--fix`              | Auto-fix confirmed Critical/High after audit            |
 | `--fail-on <severity>` | Exit non-zero for CI/CD gating (`critical`, `high`, `medium`) |
 
 Flags combine: `/autoresearch:security --diff --fix --fail-on critical --iterations 15`
@@ -1754,15 +1784,15 @@ jobs:
 
 ### When to run security audits
 
-| Scenario | Recommendation |
-|----------|---------------|
-| Before a major release | `/autoresearch:security` with `Iterations: 15` |
-| Quick sanity check | `/autoresearch:security` with `Iterations: 5` |
-| Comprehensive overnight | `/autoresearch:security` (unlimited) |
-| CI/CD gate | `/autoresearch:security --fail-on critical --iterations 10` |
-| PR review (changed files) | `/autoresearch:security --diff --iterations 5` |
-| After auth/API changes | `/autoresearch:security --diff --fix` |
-| Compliance preparation | `/autoresearch:security` with `Iterations: 20` |
+| Scenario                  | Recommendation                                            |
+| ------------------------- | --------------------------------------------------------- |
+| Before a major release    | `/autoresearch:security` with `Iterations: 15`            |
+| Quick sanity check        | `/autoresearch:security` with `Iterations: 5`             |
+| Comprehensive overnight   | `/autoresearch:security` (unlimited)                      |
+| CI/CD gate                | `/autoresearch:security --fail-on critical --iterations 10` |
+| PR review (changed files) | `/autoresearch:security --diff --iterations 5`            |
+| After auth/API changes    | `/autoresearch:security --diff --fix`                     |
+| Compliance preparation    | `/autoresearch:security` with `Iterations: 20`            |
 
 ---
 
@@ -1967,12 +1997,12 @@ process.exit(score > 0 ? 0 : 1);
 
 ### Rules for good verification
 
-| Rule | Why |
-|------|-----|
-| Runs in under 10 seconds | Fast = more iterations = more experiments |
-| Outputs a single parseable number | Claude needs to extract the metric mechanically |
-| Exit code 0 = success, non-zero = crash | Clean pass/fail signal |
-| No human judgment required | Agent must decide autonomously |
+| Rule                                     | Why                                               |
+| ---------------------------------------- | ------------------------------------------------- |
+| Runs in under 10 seconds                 | Fast = more iterations = more experiments         |
+| Outputs a single parseable number        | Claude needs to extract the metric mechanically   |
+| Exit code 0 = success, non-zero = crash  | Clean pass/fail signal                            |
+| No human judgment required               | Agent must decide autonomously                    |
 | Deterministic (same input = same output) | Non-deterministic metrics break the feedback loop |
 
 ---
@@ -1981,49 +2011,49 @@ process.exit(score > 0 ? 0 : 1);
 
 7 principles extracted from [Karpathy's autoresearch](https://github.com/karpathy/autoresearch), generalized to any domain:
 
-### 1. Constraint = Enabler
+### 1\. Constraint = Enabler
 
 Autonomy succeeds through intentional constraint, not despite it.
 
-| Autoresearch | Generalized |
-|---|---|
-| 630-line codebase | Bounded scope that fits agent context |
-| 5-minute time budget | Fixed iteration cost |
-| One metric (val_bpb) | Single mechanical success criterion |
+| Autoresearch         | Generalized                           |
+| -------------------- | ------------------------------------- |
+| 630-line codebase    | Bounded scope that fits agent context |
+| 5-minute time budget | Fixed iteration cost                  |
+| One metric (val_bpb) | Single mechanical success criterion   |
 
-### 2. Separate Strategy from Tactics
+### 2\. Separate Strategy from Tactics
 
 Humans set direction (**what** to improve). Agents execute iterations (**how** to improve it).
 
-| Strategic (Human) | Tactical (Agent) |
-|---|---|
+| Strategic (Human)         | Tactical (Agent)                      |
+| ------------------------- | ------------------------------------- |
 | "Improve page load speed" | "Lazy-load images, code-split routes" |
-| "Increase test coverage" | "Add tests for uncovered edge cases" |
+| "Increase test coverage"  | "Add tests for uncovered edge cases"  |
 
-### 3. Metrics Must Be Mechanical
+### 3\. Metrics Must Be Mechanical
 
 **Good:** `npm test -- --coverage | grep "All files"` → outputs `87.3%`
 
 **Bad:** "Looks better", "probably improved" → kills the loop.
 
-### 4. Verification Must Be Fast
+### 4\. Verification Must Be Fast
 
-| Fast (enables iteration) | Slow (kills iteration) |
-|---|---|
-| Unit tests (seconds) | Full E2E suite (minutes) |
-| Type check (seconds) | Manual QA (hours) |
-| Lint check (instant) | Code review (async) |
+| Fast (enables iteration) | Slow (kills iteration)   |
+| ------------------------ | ------------------------ |
+| Unit tests (seconds)     | Full E2E suite (minutes) |
+| Type check (seconds)     | Manual QA (hours)        |
+| Lint check (instant)     | Code review (async)      |
 
-### 5. Iteration Cost Shapes Behavior
+### 5\. Iteration Cost Shapes Behavior
 
-Cheap iteration → bold exploration, many experiments.
+Cheap iteration → bold exploration, many experiments.\
 Expensive iteration → conservative, few experiments.
 
-### 6. Git as Memory
+### 6\. Git as Memory
 
 Every successful change is committed. Failures are reverted. Enables causality tracking, stacking wins, pattern learning.
 
-### 7. Honest Limitations
+### 7\. Honest Limitations
 
 If the agent hits a wall (missing permissions, external dependency, needs human judgment), it says so clearly instead of guessing.
 
@@ -2031,23 +2061,23 @@ If the agent hits a wall (missing permissions, external dependency, needs human 
 
 ## Domain Adaptation Reference
 
-| Domain | Metric | Scope | Verify Command | Guard |
-|--------|--------|-------|----------------|-------|
-| Node.js/TS backend | Tests pass + coverage % | `src/**/*.ts` | `npm test -- --coverage` | — |
-| Python backend | pytest coverage % | `app/**/*.py` | `pytest --cov=app` | `mypy app/` |
-| Go backend | Test coverage % | `**/*.go` | `go test ./... -cover` | `go vet ./...` |
-| Rust backend | Test coverage % | `src/**/*.rs` | `cargo tarpaulin` | `cargo clippy` |
-| Frontend UI | Lighthouse score | `src/components/**` | `npx lighthouse` | `npm test` |
-| ML training | val_bpb / loss | `train.py` | `uv run train.py` | — |
-| Blog/content | Word count + readability | `content/*.md` | Custom script | — |
-| Performance | Benchmark time (ms) | Target files | `npm run bench` | `npm test` |
-| Refactoring | Tests pass + LOC reduced | Target module | `npm test && wc -l` | `npm run typecheck` |
-| Web scraping | Success rate % | `scrapers/**/*.py` | Custom test script | `pytest tests/scrapers/` |
-| Security | OWASP + STRIDE coverage | API/auth/middleware | `/autoresearch:security` | — |
-| Debugging | Bugs found + coverage | Target files | `/autoresearch:debug` | — |
-| Fixing | Error count (lower) | Target files | `/autoresearch:fix` | `npm test` |
-| Scenarios | Use cases + edge cases | Feature files | `/autoresearch:scenario` | — |
-| Shipping | Checklist pass rate (%) | Any artifact | `/autoresearch:ship` | Domain-specific |
+| Domain             | Metric                   | Scope               | Verify Command         | Guard                  |
+| ------------------ | ------------------------ | ------------------- | ---------------------- | ---------------------- |
+| Node.js/TS backend | Tests pass + coverage %  | `src/**/*.ts`       | `npm test -- --coverage` | —                      |
+| Python backend     | pytest coverage %        | `app/**/*.py`       | `pytest --cov=app`     | `mypy app/`            |
+| Go backend         | Test coverage %          | `**/*.go`           | `go test ./... -cover` | `go vet ./...`         |
+| Rust backend       | Test coverage %          | `src/**/*.rs`       | `cargo tarpaulin`      | `cargo clippy`         |
+| Frontend UI        | Lighthouse score         | `src/components/**` | `npx lighthouse`       | `npm test`             |
+| ML training        | val_bpb / loss           | `train.py`          | `uv run train.py`      | —                      |
+| Blog/content       | Word count + readability | `content/*.md`      | Custom script          | —                      |
+| Performance        | Benchmark time (ms)      | Target files        | `npm run bench`        | `npm test`             |
+| Refactoring        | Tests pass + LOC reduced | Target module       | `npm test && wc -l`    | `npm run typecheck`    |
+| Web scraping       | Success rate %           | `scrapers/**/*.py`  | Custom test script     | `pytest tests/scrapers/` |
+| Security           | OWASP + STRIDE coverage  | API/auth/middleware | `/autoresearch:security` | —                      |
+| Debugging          | Bugs found + coverage    | Target files        | `/autoresearch:debug`  | —                      |
+| Fixing             | Error count (lower)      | Target files        | `/autoresearch:fix`    | `npm test`             |
+| Scenarios          | Use cases + edge cases   | Feature files       | `/autoresearch:scenario` | —                      |
+| Shipping           | Checklist pass rate (%)  | Any artifact        | `/autoresearch:ship`   | Domain-specific        |
 
 Adapt the loop to your domain. The **principles** are universal; the **metrics** are domain-specific.
 
@@ -2065,13 +2095,13 @@ Iterations: 25
 
 ### When to use bounded iterations
 
-| Scenario | Recommendation |
-|----------|---------------|
-| Run overnight | Unlimited (default) |
-| Quick 30-min session | `Iterations: 10` |
-| Targeted fix | `Iterations: 5` |
-| Exploratory | `Iterations: 15` |
-| CI/CD integration | `--iterations N` flag (set N based on time budget) |
+| Scenario             | Recommendation                                   |
+| -------------------- | ------------------------------------------------ |
+| Run overnight        | Unlimited (default)                              |
+| Quick 30-min session | `Iterations: 10`                                 |
+| Targeted fix         | `Iterations: 5`                                  |
+| Exploratory          | `Iterations: 15`                                 |
+| CI/CD integration    | `--iterations N` flag (set N based on time budget) |
 
 ### Final summary format
 

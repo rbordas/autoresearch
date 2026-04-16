@@ -367,6 +367,6 @@ When `--monitor N` is set, `:ship` enters a watch loop after shipping:
 
 <div align="center">
 
-**[Guide Index](README.md)** | **[Chains & Combinations](chains-and-combinations.md)** | **[/autoresearch:scenario](autoresearch-scenario.md)**
+**[Guide Index](Claude/Home/Claude-Work/PROJECTS/autoresearch/guide/README.md)** | **[Chains & Combinations](chains-and-combinations.md)** | **[/autoresearch:scenario](autoresearch-scenario.md)**
 
 </div>

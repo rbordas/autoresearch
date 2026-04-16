@@ -430,4 +430,4 @@ You never need to summarize one stage's output and paste it into the next. The c
 
 ---
 
-*Related: [getting-started.md](./getting-started.md) · [autoresearch.md](./autoresearch.md) · [autoresearch-debug.md](./autoresearch-debug.md)*
+*Related: [getting-started.md](getting-started.md) · [autoresearch.md](Claude/Home/Claude-Work/PROJECTS/autoresearch/guide/autoresearch.md) · [autoresearch-debug.md](autoresearch-debug.md)*

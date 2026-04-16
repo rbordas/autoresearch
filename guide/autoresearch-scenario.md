@@ -395,6 +395,6 @@ A summary table at the top of `scenario-results.md` is updated each iteration wi
 
 <div align="center">
 
-**[Guide Index](README.md)** | **[Chains & Combinations](chains-and-combinations.md)** | **[/autoresearch:ship](autoresearch-ship.md)**
+**[Guide Index](Claude/Home/Claude-Work/PROJECTS/autoresearch/guide/README.md)** | **[Chains & Combinations](chains-and-combinations.md)** | **[/autoresearch:ship](autoresearch-ship.md)**
 
 </div>
